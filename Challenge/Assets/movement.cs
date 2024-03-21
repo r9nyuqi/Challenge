@@ -5,11 +5,25 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-
+    public Sprite white;
+    public Sprite red;
     bool faceRight = true;
     float horizontalInput;
     public float movespeed = 5f;
     public Rigidbody2D rb;
+    public float qTimer = 0;
+    public String qDisplay;
+    public float wTimer = 0;
+    public String wDisplay;
+    public float eTimer = 0;
+    public String eDisplay;
+    public bool loadQ = true;
+    public bool loadW = true;
+    public bool loadE = true;
+    bool isQ = false;
+    bool isW = false;
+    public bool isE = false;
+
     // Start is called before the first frame update
 
     Vector2 move;
@@ -46,6 +60,26 @@ public class movement : MonoBehaviour
         {
             animator.SetBool("S", false);
         }
+        if (qTimer > 0)
+        {
+            qTimer -= Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.Q) && !isQ && qTimer <= 0 && loadQ)
+        {
+            isQ = true;
+            
+            qTimer = (float)(0.5);
+            loadQ = false;
+           
+        }
+        else
+        {
+            isQ = false;
+            
+        }
+
+        qDisplay = updateTimer(qTimer);
     }
 
     private void FixedUpdate()
@@ -65,5 +99,14 @@ public class movement : MonoBehaviour
             ls.x *= -1f;
             transform.localScale = ls;
         }
+    }
+    String updateTimer(float time)
+    {
+
+
+        if (time <= 0) return "0";
+
+
+        else return time.ToString("F1");
     }
 }
