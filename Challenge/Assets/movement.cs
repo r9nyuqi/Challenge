@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public Sprite white;
-    public Sprite red;
+    public Sprite white = Resources.Load<Sprite>("whiteSquare");
+    public Sprite red = Resources.Load<Sprite>("redSwatch");
+    public SpriteRenderer render;
     bool faceRight = true;
     float horizontalInput;
     public float movespeed = 5f;
@@ -72,10 +73,12 @@ public class movement : MonoBehaviour
             qTimer = (float)(0.5);
             loadQ = false;
            
+           
         }
         else
         {
             isQ = false;
+           
             
         }
 
