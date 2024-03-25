@@ -25,6 +25,14 @@ public class movement : MonoBehaviour
     bool isW = false;
     public bool isE = false;
 
+    private bool isDash = false;
+  
+    public float dashPower = 24f;
+    public float dashTime = 0.2f;
+
+    [SerializeField] private TrailRenderer tr;
+    
+
     // Start is called before the first frame update
 
     Vector2 move;
@@ -32,6 +40,10 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDash)
+        {
+            return;
+        }
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
@@ -61,32 +73,66 @@ public class movement : MonoBehaviour
         {
             animator.SetBool("S", false);
         }
-        if (qTimer > 0)
-        {
-            qTimer -= Time.deltaTime;
-        }
+        //if (qTimer > 0)
+        //{
+        //    qTimer -= Time.deltaTime;
+        //}
 
-        if (Input.GetKey(KeyCode.Q) && !isQ && qTimer <= 0 && loadQ)
-        {
-            isQ = true;
+        //if (Input.GetKey(KeyCode.Q) && !isQ && qTimer <= 0 && loadQ)
+        //{
+        //    isQ = true;
             
-            qTimer = (float)(0.5);
-            loadQ = false;
+        //    qTimer = (float)(0.5);
+        //    loadQ = false;
            
            
-        }
-        else
-        {
-            isQ = false;
-           
-            
-        }
+        //}
+        //else
+        //{
+        //    isQ = false;      
+        //}
+        //if (Input.GetKeyUp(KeyCode.Q))
+        //{
+        //    loadQ = true;
+        //}
 
-        qDisplay = updateTimer(qTimer);
+        //qDisplay = updateTimer(qTimer);
+
+        //if (eTimer > 0)
+        //{
+        //    eTimer -= Time.deltaTime;
+        //}
+
+        //if (Input.GetKey(KeyCode.E) && !isE && eTimer <= 0 && loadE)
+        //{
+
+        //    StartCoroutine(Dash());
+        //    isE = true;
+        //    eTimer = (float)(3);
+        //    loadE = false;
+
+
+
+        //}
+        //else
+        //{
+        //    isE = false;
+
+        //}
+        //if (Input.GetKeyUp(KeyCode.E))
+        //{
+        //    loadE = true;
+        //}
+        //eDisplay = updateTimer(eTimer);
     }
+
 
     private void FixedUpdate()
     {
+        if(isDash)
+        {
+            return;
+        }
         rb.MovePosition(rb.position + move * movespeed * Time.deltaTime);
         rb.velocity = new Vector2(horizontalInput * movespeed, rb.velocity.y);
         animator.SetFloat("speed", Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
@@ -103,6 +149,9 @@ public class movement : MonoBehaviour
             transform.localScale = ls;
         }
     }
+
+   
+
     String updateTimer(float time)
     {
 
@@ -112,4 +161,16 @@ public class movement : MonoBehaviour
 
         else return time.ToString("F1");
     }
+
+    private IEnumerator Dash()
+    {
+        isDash = true;
+        rb.velocity = new Vector2(rb.velocity.x * dashPower, rb.velocity.y * dashPower);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashTime);
+        tr.emitting = false;
+        isDash = false;
+        
+    }
+    
 }
