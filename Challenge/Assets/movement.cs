@@ -29,6 +29,7 @@ public class movement : MonoBehaviour
   
     public float dashPower = 24f;
     public float dashTime = 0.2f;
+    public float eTime = 0;
 
     [SerializeField] private TrailRenderer tr;
     
@@ -40,39 +41,41 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isDash)
+
+        if(!Input.GetKey(KeyCode.E))
         {
-            return;
+            move.x = Input.GetAxisRaw("Horizontal");
+            move.y = Input.GetAxisRaw("Vertical");
         }
-        move.x = Input.GetAxisRaw("Horizontal");
-        move.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
-        {
-            horizontalInput = Input.GetAxis("Horizontal");
-            animator.SetBool("AD", true);
-        }
-        else
-        {
-            animator.SetBool("AD", false);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            horizontalInput = 0f;
-            animator.SetBool("W", true);
-        }
-        else
-        {
-            animator.SetBool("W", false);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            horizontalInput = 0f;
-            animator.SetBool("S", true);
-        }
-        else
-        {
-            animator.SetBool("S", false);
-        }
+
+
+        //if (Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
+        //{
+        //    horizontalInput = Input.GetAxis("Horizontal");
+        //    animator.SetBool("AD", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("AD", false);
+        //}
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    horizontalInput = 0f;
+        //    animator.SetBool("W", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("W", false);
+        //}
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    horizontalInput = 0f;
+        //    animator.SetBool("S", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("S", false);
+        //}
         //if (qTimer > 0)
         //{
         //    qTimer -= Time.deltaTime;
@@ -81,11 +84,11 @@ public class movement : MonoBehaviour
         //if (Input.GetKey(KeyCode.Q) && !isQ && qTimer <= 0 && loadQ)
         //{
         //    isQ = true;
-            
+
         //    qTimer = (float)(0.5);
         //    loadQ = false;
-           
-           
+
+
         //}
         //else
         //{
@@ -98,41 +101,45 @@ public class movement : MonoBehaviour
 
         //qDisplay = updateTimer(qTimer);
 
-        //if (eTimer > 0)
-        //{
-        //    eTimer -= Time.deltaTime;
-        //}
+        if (eTimer > 0)
+        {
+            eTimer -= Time.deltaTime;
+        }
 
-        //if (Input.GetKey(KeyCode.E) && !isE && eTimer <= 0 && loadE)
-        //{
+        if (Input.GetKey(KeyCode.E) && !isE && eTimer <= 0 && loadE && eTime ==0)
+        {
 
-        //    StartCoroutine(Dash());
-        //    isE = true;
-        //    eTimer = (float)(3);
-        //    loadE = false;
+            movespeed = 22;
+            isE = true;
+            eTimer = (float)(3);
+            loadE = false;
+            eTime = 1;
 
 
+        }
+        if(eTime > 0)
+        {
+            eTime += Time.deltaTime;
+        }
+        else if(eTime >= 0.5)
+        {
+            movespeed = 5f;
+            isE = false;
+            eTime = 0;
 
-        //}
-        //else
-        //{
-        //    isE = false;
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            loadE = true;
+        }
+        eDisplay = updateTimer(eTimer);
 
-        //}
-        //if (Input.GetKeyUp(KeyCode.E))
-        //{
-        //    loadE = true;
-        //}
-        //eDisplay = updateTimer(eTimer);
     }
 
 
     private void FixedUpdate()
     {
-        if(isDash)
-        {
-            return;
-        }
+       
         rb.MovePosition(rb.position + move * movespeed * Time.deltaTime);
         rb.velocity = new Vector2(horizontalInput * movespeed, rb.velocity.y);
         animator.SetFloat("speed", Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
@@ -165,7 +172,7 @@ public class movement : MonoBehaviour
     private IEnumerator Dash()
     {
         isDash = true;
-        rb.velocity = new Vector2(rb.velocity.x * dashPower, rb.velocity.y * dashPower);
+        movespeed = 22;
         tr.emitting = true;
         yield return new WaitForSeconds(dashTime);
         tr.emitting = false;
