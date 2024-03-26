@@ -8,6 +8,8 @@ TagManager:
   - Green
   - Blue
   - Bullet
+  - Enemy
+  - drops
   layers:
   - Default
   - TransparentFX

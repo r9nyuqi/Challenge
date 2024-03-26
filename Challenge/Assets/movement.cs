@@ -30,6 +30,8 @@ public class movement : MonoBehaviour
     public float dashPower = 24f;
     public float dashTime = 0.2f;
     public float eTime = 0;
+    public float speedTime = 0;
+    public bool speed = false;
 
     [SerializeField] private TrailRenderer tr;
     
@@ -113,16 +115,18 @@ public class movement : MonoBehaviour
             isE = true;
             eTimer = (float)(3);
             loadE = false;
-            eTime = 1;
+            eTime = (float)(0.1);
 
 
         }
-        if(eTime > 0)
+        if(eTime > 0 && eTime < 0.25 && isE)
         {
             eTime += Time.deltaTime;
+            tr.emitting = true;
         }
-        else if(eTime >= 0.5)
+        else if(eTime >= 0.25)
         {
+            tr.emitting = false;
             movespeed = 5f;
             isE = false;
             eTime = 0;
@@ -133,6 +137,22 @@ public class movement : MonoBehaviour
             loadE = true;
         }
         eDisplay = updateTimer(eTimer);
+
+        if(speed)
+        {
+            speedTime = (float)(0.1);
+            speed = false;
+        }
+        if(speedTime > 0 && speedTime <= 10)
+        {
+            speedTime += Time.deltaTime;
+            movespeed = 10f;
+        }
+        else if(speedTime >= 10)
+        {
+            speedTime = 0;
+            movespeed = 5f;
+        }
 
     }
 
@@ -179,5 +199,16 @@ public class movement : MonoBehaviour
         isDash = false;
         
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("drops"))
+        {
+            Destroy(other.gameObject);
+            speed = true;
+        }
+        
+    }
+
+
 }
