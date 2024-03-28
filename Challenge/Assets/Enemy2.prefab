@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3256496922664382958}
   - component: {fileID: 6581550033412466364}
   - component: {fileID: 2567126933115575939}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   speed: 3
   rb: {fileID: 3256496922664382958}
   rotateSpeed: 0.025
+  hasLineOfSight: 0
 --- !u!58 &2567126933115575939
 CircleCollider2D:
   m_ObjectHideFlags: 0

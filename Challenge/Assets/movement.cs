@@ -143,7 +143,7 @@ public class movement : MonoBehaviour
             speedTime = (float)(0.1);
             speed = false;
         }
-        if(speedTime > 0 && speedTime <= 10)
+        if(speedTime > 0 && speedTime <= 10 && !isE )
         {
             speedTime += Time.deltaTime;
             movespeed = 10f;

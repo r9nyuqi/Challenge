@@ -8,6 +8,10 @@ public class Enemy : MonoBehaviour
     public float speed = 3f;
     public Rigidbody2D rb;
     public float rotateSpeed = 0.0025f;
+    public bool hasLineOfSight = false;
+
+    Vector2 waypoint;
+    [SerializeField]
     // Start is called before the first frame update
     void Start()
     {
@@ -24,14 +28,34 @@ public class Enemy : MonoBehaviour
 
         else
         {
-            RotateTowardsTarget();
+            if(hasLineOfSight)
+            {
+                RotateTowardsTarget();
+            }
+            
+            
         }
+       
 
     }
 
     private void FixedUpdate()
     {
         rb.velocity = transform.up * speed;
+
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
+        if(ray.collider)
+        {
+            hasLineOfSight = ray.collider.CompareTag("Player");
+        }
+        if(hasLineOfSight)
+        {
+            Debug.DrawRay(transform.position, target.position - transform.position,Color.green);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
+        }
     }
 
     private void getTarget()
@@ -65,4 +89,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+   //private void setNewDistance()
+   // {
+   //     waypoint = new Vector2(Random.Range())
+   // }
 }
