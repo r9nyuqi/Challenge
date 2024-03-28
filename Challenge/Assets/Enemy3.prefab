@@ -131,6 +131,8 @@ MonoBehaviour:
   rb: {fileID: 1017007620766835137}
   rotateSpeed: 0.025
   hasLineOfSight: 0
+  maxDistance: 5
+  range: 0.5
 --- !u!58 &2042574162855867906
 CircleCollider2D:
   m_ObjectHideFlags: 0

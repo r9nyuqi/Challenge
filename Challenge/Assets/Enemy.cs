@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour
     public bool hasLineOfSight = false;
 
     Vector2 waypoint;
-    [SerializeField]
+    [SerializeField] float maxDistance;
+    [SerializeField] float range;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
             {
                 RotateTowardsTarget();
             }
+
             
             
         }
@@ -41,7 +44,8 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = transform.up * speed;
+        
+        
 
         RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
         if(ray.collider)
@@ -50,10 +54,12 @@ public class Enemy : MonoBehaviour
         }
         if(hasLineOfSight)
         {
+            rb.velocity = transform.up * speed;
             Debug.DrawRay(transform.position, target.position - transform.position,Color.green);
         }
         else
         {
+            rb.velocity = new Vector2(0,0);
             Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
         }
     }
@@ -90,8 +96,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-   //private void setNewDistance()
-   // {
-   //     waypoint = new Vector2(Random.Range())
-   // }
+    private void setNewDistance()
+    {
+        waypoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
+     }
 }

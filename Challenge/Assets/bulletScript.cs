@@ -8,6 +8,7 @@ public class bulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+    public float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,21 @@ public class bulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(timer < 5)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
