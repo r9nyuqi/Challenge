@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class Enemy : MonoBehaviour
     Vector2 waypoint;
     [SerializeField] float maxDistance;
     [SerializeField] float range;
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
@@ -27,17 +32,20 @@ public class Enemy : MonoBehaviour
         {
             getTarget();
         }
+        agent.SetDestination(target.position);
 
-        else
-        {
-            if(hasLineOfSight)
-            {
-                RotateTowardsTarget();
-            }
+        //else
+        //{
+        //    if(hasLineOfSight)
+        //    {
+        //        RotateTowardsTarget();
+        //    }
 
             
             
-        }
+        //}
+
+
        
 
     }
@@ -47,21 +55,21 @@ public class Enemy : MonoBehaviour
         
         
 
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
-        if(ray.collider)
-        {
-            hasLineOfSight = ray.collider.CompareTag("Player");
-        }
-        if(hasLineOfSight)
-        {
-            rb.velocity = transform.up * speed;
-            Debug.DrawRay(transform.position, target.position - transform.position,Color.green);
-        }
-        else
-        {
-            rb.velocity = new Vector2(0,0);
-            Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
-        }
+        //RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
+        //if(ray.collider)
+        //{
+        //    hasLineOfSight = ray.collider.CompareTag("Player");
+        //}
+        //if(hasLineOfSight)
+        //{
+        //    rb.velocity = transform.up * speed;
+        //    Debug.DrawRay(transform.position, target.position - transform.position,Color.green);
+        //}
+        //else
+        //{
+        //    rb.velocity = new Vector2(0,0);
+        //    Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
+        //}
     }
 
     private void getTarget()
