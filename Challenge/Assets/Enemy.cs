@@ -14,62 +14,66 @@ public class Enemy : MonoBehaviour
     Vector2 waypoint;
     [SerializeField] float maxDistance;
     [SerializeField] float range;
-    public NavMeshAgent agent;
+    private Vector3 lastVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!target)
+        
+        rb.velocity = transform.up * speed;
+        lastVelocity = rb.velocity;
+        if (!target)
         {
             getTarget();
         }
-        agent.SetDestination(target.position);
+        
 
-        //else
-        //{
-        //    if(hasLineOfSight)
-        //    {
-        //        RotateTowardsTarget();
-        //    }
-
+        else
+        {
+            if (hasLineOfSight)
+            {
+                RotateTowardsTarget();
+                
+            }
+           
             
-            
-        //}
+        }
 
 
-       
+
 
     }
 
     private void FixedUpdate()
     {
-        
-        
 
-        //RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
-        //if(ray.collider)
-        //{
-        //    hasLineOfSight = ray.collider.CompareTag("Player");
-        //}
-        //if(hasLineOfSight)
-        //{
-        //    rb.velocity = transform.up * speed;
-        //    Debug.DrawRay(transform.position, target.position - transform.position,Color.green);
-        //}
-        //else
-        //{
-        //    rb.velocity = new Vector2(0,0);
-        //    Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
-        //}
+
+
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
+        if (ray.collider)
+        {
+            hasLineOfSight = ray.collider.CompareTag("Player");
+        }
+        if (hasLineOfSight)
+        {
+            
+            Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
+        }
+        else
+        {
+
+            
+            Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
+        }
     }
 
     private void getTarget()
@@ -102,10 +106,22 @@ public class Enemy : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("Wall"))
+        {
+            
+            var speed = lastVelocity.magnitude;
+            var direction = Vector3.Reflect(lastVelocity.normalized, other.contacts[0].normal);
+
+            Quaternion q = Quaternion.Euler(direction);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, q, 1);
+        }
     }
 
     private void setNewDistance()
     {
         waypoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
-     }
+    }
+
+
+   
 }
