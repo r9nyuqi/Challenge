@@ -15,11 +15,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxDistance;
     [SerializeField] float range;
     private Vector3 lastVelocity;
+    public bool bounce = false;
+    public float bounceTime;
+    public float currentRotation;
+    private Vector3 currDir;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        int rotation = Random.RandomRange(0, 359);
+        rb.rotation = rotation;
 
         
 
@@ -28,8 +34,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+        currentRotation = rb.rotation;
         lastVelocity = rb.velocity;
         if (!target)
         {
@@ -44,7 +50,23 @@ public class Enemy : MonoBehaviour
                 RotateTowardsTarget();
                 
             }
-           
+            //if(bounce)
+            //{
+            //    bounceTime = 1;
+
+            //}
+            //if(bounceTime > 0 && bounceTime < 2)
+            //{
+            //    bounceTime += Time.deltaTime;
+            //    rb.rotation += 0.5f;
+            //    bounce = false;
+
+            //}
+            //if(bounceTime >= 2)
+            //{
+            //    bounceTime = 0;
+            //}
+            
             
         }
 
@@ -57,7 +79,7 @@ public class Enemy : MonoBehaviour
     {
 
 
-
+        currDir = new Vector3(transform.position.x, transform.position.y, 0);
         RaycastHit2D ray = Physics2D.Raycast(transform.position, target.position - transform.position);
         if (ray.collider)
         {
@@ -70,7 +92,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            print(rb.transform.up * speed);
+         
             rb.velocity = transform.up * speed;
             Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
         }
@@ -92,7 +114,15 @@ public class Enemy : MonoBehaviour
         Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
         transform.localRotation = Quaternion.Slerp(transform.localRotation,q,rotateSpeed);
 
+
     }
+
+    private void bounceOffWal()
+    {
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Inverse(transform.localRotation), 1);
+
+    }
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -108,8 +138,15 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
-
-            transform.rotation = Quaternion.Inverse(transform.rotation);
+            Vector3 newDir = new Vector3(transform.position.x, transform.position.y, 0);
+            float newDirValue = Mathf.Atan2(newDir.y - currDir.y, newDir.x - currDir.x);
+            float newDirValueDeg = (180 / Mathf.PI) * newDirValue;
+            transform.rotation = Quaternion.Euler(0, 0, newDirValueDeg);
+        }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            rb.rotation =  other.rigidbody.rotation - 180;
+            other.rigidbody.rotation += rb.rotation - 180;
         }
     }
 
