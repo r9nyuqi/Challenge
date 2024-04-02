@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
-        rb.velocity = transform.up * speed;
+        
         lastVelocity = rb.velocity;
         if (!target)
         {
@@ -65,13 +65,13 @@ public class Enemy : MonoBehaviour
         }
         if (hasLineOfSight)
         {
-            
+            rb.velocity = transform.up * speed;
             Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
         }
         else
         {
-
-            
+            print(rb.transform.up * speed);
+            rb.velocity = transform.up * speed;
             Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
         }
     }
@@ -108,12 +108,8 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
-            
-            var speed = lastVelocity.magnitude;
-            var direction = Vector3.Reflect(lastVelocity.normalized, other.contacts[0].normal);
 
-            Quaternion q = Quaternion.Euler(direction);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, q, 1);
+            transform.rotation = Quaternion.Inverse(transform.rotation);
         }
     }
 
