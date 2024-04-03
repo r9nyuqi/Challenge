@@ -20,14 +20,16 @@ public class Enemy : MonoBehaviour
     public float currentRotation;
     private Vector3 currDir;
 
+    private Vector3 direction = new Vector3(1,1,0);
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        int rotation = Random.RandomRange(0, 359);
-        rb.rotation = rotation;
 
-        
+        float angleChange = Random.Range(-90f, 90f);
+        Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
+        direction = rotation * direction;
+        print(direction);
+
 
     }
 
@@ -93,7 +95,7 @@ public class Enemy : MonoBehaviour
         else
         {
          
-            rb.velocity = transform.up * speed;
+            rb.velocity = direction * speed;
             Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
         }
     }
@@ -138,16 +140,24 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
-            Vector3 newDir = new Vector3(transform.position.x, transform.position.y, 0);
-            float newDirValue = Mathf.Atan2(newDir.y - currDir.y, newDir.x - currDir.x);
-            float newDirValueDeg = (180 / Mathf.PI) * newDirValue;
-            transform.rotation = Quaternion.Euler(0, 0, newDirValueDeg);
+            var speed = lastVelocity.magnitude;
+            direction = Vector3.Reflect(lastVelocity.normalized, other.contacts[0].normal);
+          
+            
         }
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            rb.rotation =  other.rigidbody.rotation - 180;
-            other.rigidbody.rotation += rb.rotation - 180;
-        }
+        
+        //else if (other.gameObject.CompareTag("Wall"))
+        //{
+        //    Vector3 newDir = new Vector3(transform.position.x, transform.position.y, 0);
+        //    float newDirValue = Mathf.Atan2(newDir.y - currDir.y, newDir.x - currDir.x);
+        //    float newDirValueDeg = (180 / Mathf.PI) * newDirValue;
+        //    transform.rotation = Quaternion.Euler(0, 0, newDirValueDeg);
+        //}
+        //else if (other.gameObject.CompareTag("Enemy"))
+        //{
+        //    rb.rotation =  other.rigidbody.rotation - 180;
+        //    other.rigidbody.rotation += rb.rotation - 180;
+        //}
     }
 
     private void setNewDistance()
