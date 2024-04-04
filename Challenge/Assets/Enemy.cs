@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -19,16 +20,20 @@ public class Enemy : MonoBehaviour
     public float bounceTime;
     public float currentRotation;
     private Vector3 currDir;
+    public bool loss = false;
+    public float lossTime;
+    public int roomIndex;
 
     private Vector3 direction = new Vector3(1,1,0);
     // Start is called before the first frame update
     void Start()
     {
 
+        roomIndex = 2;
         float angleChange = Random.Range(-90f, 90f);
         Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
         direction = rotation * direction;
-        print(direction);
+       
 
 
     }
@@ -72,6 +77,8 @@ public class Enemy : MonoBehaviour
             
         }
 
+     
+
 
 
 
@@ -99,6 +106,7 @@ public class Enemy : MonoBehaviour
             Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
         }
     }
+
 
     private void getTarget()
     {
@@ -132,6 +140,8 @@ public class Enemy : MonoBehaviour
         {
             Destroy(other.gameObject);
             target = null;
+            StartCoroutine(Loss());
+          
         }
         else if (other.gameObject.CompareTag("Bullet"))
         {
@@ -158,6 +168,22 @@ public class Enemy : MonoBehaviour
         //    rb.rotation =  other.rigidbody.rotation - 180;
         //    other.rigidbody.rotation += rb.rotation - 180;
         //}
+    }
+
+    private IEnumerator Loss()
+    {
+        WaitForSeconds wait = new WaitForSeconds(3);
+
+
+        if (true)
+        {
+
+            yield return wait;
+            print("test");
+            SceneManager.LoadScene(roomIndex);
+
+
+        }
     }
 
     private void setNewDistance()

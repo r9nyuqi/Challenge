@@ -136,6 +136,9 @@ MonoBehaviour:
   bounce: 0
   bounceTime: 0
   currentRotation: 0
+  loss: 0
+  lossTime: 0
+  roomIndex: 2
 --- !u!58 &2042574162855867906
 CircleCollider2D:
   m_ObjectHideFlags: 0

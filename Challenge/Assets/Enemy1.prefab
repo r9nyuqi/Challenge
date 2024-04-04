@@ -136,6 +136,9 @@ MonoBehaviour:
   bounce: 0
   bounceTime: 0
   currentRotation: 0
+  loss: 0
+  lossTime: 0
+  roomIndex: 1
 --- !u!61 &6526477725422840847
 BoxCollider2D:
   m_ObjectHideFlags: 0

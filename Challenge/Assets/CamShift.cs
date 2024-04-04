@@ -46,10 +46,10 @@ public class Camshift : MonoBehaviour
             Vector2 newSpawner2 = new Vector2(spawner2.position.x, spawner2.position.y + next);
             Vector2 newSpawner3 = new Vector2(spawner3.position.x, spawner3.position.y + next);
             Vector2 newSpawner4 = new Vector2(spawner4.position.x, spawner4.position.y + next);
-            spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
-            spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
-            spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
-            spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
+            //spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
+            //spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
+            //spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
+            //spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
             top.position = Vector3.SmoothDamp(top.position, newTop, ref velocity, smoothTime);
             left.position = Vector3.SmoothDamp(left.position, newLeft, ref velocity, smoothTime);
             right.position = Vector3.SmoothDamp(right.position, newRight, ref velocity, smoothTime);
@@ -71,10 +71,10 @@ public class Camshift : MonoBehaviour
             Vector2 newSpawner2 = new Vector2(spawner2.position.x, spawner2.position.y - next);
             Vector2 newSpawner3 = new Vector2(spawner3.position.x, spawner3.position.y - next);
             Vector2 newSpawner4 = new Vector2(spawner4.position.x, spawner4.position.y - next);
-            spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
-            spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
-            spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
-            spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
+            //spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
+            //spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
+            //spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
+            //spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
             top.position = Vector3.SmoothDamp(top.position, newTop, ref velocity, smoothTime);
             left.position = Vector3.SmoothDamp(left.position, newLeft, ref velocity, smoothTime);
             right.position = Vector3.SmoothDamp(right.position, newRight, ref velocity, smoothTime);
@@ -88,10 +88,10 @@ public class Camshift : MonoBehaviour
             Vector2 newSpawner2 = new Vector2(spawner2.position.x - leftright, spawner2.position.y);
             Vector2 newSpawner3 = new Vector2(spawner3.position.x - leftright, spawner3.position.y);
             Vector2 newSpawner4 = new Vector2(spawner4.position.x - leftright, spawner4.position.y);
-            spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
-            spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
-            spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
-            spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
+            //spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
+            //spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
+            //spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
+            //spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
 
             Vector2 newTop = new Vector2(top.position.x - leftright, top.position.y);
             Vector2 newRight = new Vector2(right.position.x - leftright, right.position.y);
@@ -111,10 +111,10 @@ public class Camshift : MonoBehaviour
             Vector2 newSpawner2 = new Vector2(spawner2.position.x + leftright, spawner2.position.y);
             Vector2 newSpawner3 = new Vector2(spawner3.position.x + leftright, spawner3.position.y);
             Vector2 newSpawner4 = new Vector2(spawner4.position.x + leftright, spawner4.position.y);
-            spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
-            spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
-            spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
-            spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
+            //spawner1.position = Vector3.SmoothDamp(spawner1.position, newSpawner1, ref velocity, smoothTime);
+            //spawner2.position = Vector3.SmoothDamp(spawner2.position, newSpawner2, ref velocity, smoothTime);
+            //spawner3.position = Vector3.SmoothDamp(spawner3.position, newSpawner3, ref velocity, smoothTime);
+            //spawner4.position = Vector3.SmoothDamp(spawner4.position, newSpawner4, ref velocity, smoothTime);
 
             Vector2 newTop = new Vector2(top.position.x + leftright, top.position.y);
             Vector2 newRight = new Vector2(right.position.x + leftright, right.position.y);
