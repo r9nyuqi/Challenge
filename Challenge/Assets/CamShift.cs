@@ -15,8 +15,8 @@ public class Camshift : MonoBehaviour
     [SerializeField] private Transform spawner2;
     [SerializeField] private Transform spawner3;
     [SerializeField] private Transform spawner4;
-    public int updown;
-    public int leftright;
+    public float updown;
+    public float leftright;
     private float smoothTime = 0f;
     private Vector3 velocity = Vector3.zero;
     public int next;
