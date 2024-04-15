@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
     public SpriteRenderer render;
     bool faceRight = true;
     float horizontalInput;
-    public float movespeed = 2f;
+    public float movespeed = 7f;
     public Rigidbody2D rb;
     public float qTimer = 0;
     public String qDisplay;
@@ -50,59 +50,6 @@ public class movement : MonoBehaviour
             move.y = Input.GetAxisRaw("Vertical");
         }
 
-
-        //if (Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
-        //{
-        //    horizontalInput = Input.GetAxis("Horizontal");
-        //    animator.SetBool("AD", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("AD", false);
-        //}
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    horizontalInput = 0f;
-        //    animator.SetBool("W", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("W", false);
-        //}
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    horizontalInput = 0f;
-        //    animator.SetBool("S", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("S", false);
-        //}
-        //if (qTimer > 0)
-        //{
-        //    qTimer -= Time.deltaTime;
-        //}
-
-        //if (Input.GetKey(KeyCode.Q) && !isQ && qTimer <= 0 && loadQ)
-        //{
-        //    isQ = true;
-
-        //    qTimer = (float)(0.5);
-        //    loadQ = false;
-
-
-        //}
-        //else
-        //{
-        //    isQ = false;      
-        //}
-        //if (Input.GetKeyUp(KeyCode.Q))
-        //{
-        //    loadQ = true;
-        //}
-
-        //qDisplay = updateTimer(qTimer);
-
         if (eTimer > 0)
         {
             eTimer -= Time.deltaTime;
@@ -111,7 +58,7 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && !isE && eTimer <= 0 && loadE && eTime ==0)
         {
 
-            movespeed = 10f;
+            movespeed = 15f;
             isE = true;
             eTimer = (float)(3);
             loadE = false;
@@ -127,7 +74,7 @@ public class movement : MonoBehaviour
         else if(eTime >= 0.25)
         {
             tr.emitting = false;
-            movespeed = 2f;
+            movespeed = 7f;
             isE = false;
             eTime = 0;
 
@@ -146,12 +93,12 @@ public class movement : MonoBehaviour
         if(speedTime > 0 && speedTime <= 10 && !isE )
         {
             speedTime += Time.deltaTime;
-            movespeed = 4f;
+            movespeed = 10f;
         }
         else if(speedTime >= 10)
         {
             speedTime = 0;
-            movespeed = 2f;
+            movespeed = 7f;
         }
 
     }
