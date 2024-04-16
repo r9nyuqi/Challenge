@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
-        if (Input.GetKey(KeyCode.Q) && !isQ && qTimer <= 0 && loadQ)
+        if (Input.GetKey(KeyCode.Mouse0) && !isQ && qTimer <= 0 && loadQ)
         {
             isQ = true;
 
@@ -48,7 +48,7 @@ public class Shooting : MonoBehaviour
         {
             qTimer -= Time.deltaTime;
         }
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             loadQ = true;
         }

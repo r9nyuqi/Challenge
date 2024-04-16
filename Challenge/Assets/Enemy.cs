@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     public int roomIndex;
 
     private Vector3 direction = new Vector3(1,1,0);
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +42,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //if(rb.velocity.x <0.5 && rb.velocity.y <0.5)
+        //{
+        //    rb.AddForce(transform.up * 15f);
+        //}
         currentRotation = rb.rotation;
         lastVelocity = rb.velocity;
         if (!target)

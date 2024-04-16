@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - drops
   - Wall
+  - Spawner
+  - Win
   layers:
   - Default
   - TransparentFX

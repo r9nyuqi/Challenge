@@ -24,7 +24,7 @@ public class QCD : MonoBehaviour
             Timer -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.Q) && !isQ && Timer <= 0 && loadQ)
+        if (Input.GetKey(KeyCode.Mouse0) && !isQ && Timer <= 0 && loadQ)
         {
             isQ = true;
 
@@ -37,7 +37,7 @@ public class QCD : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             loadQ = true;
         }
