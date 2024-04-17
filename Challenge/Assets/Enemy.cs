@@ -24,12 +24,15 @@ public class Enemy : MonoBehaviour
     public float lossTime;
     public int roomIndex;
 
+    public float vTimer;
+    public bool vStart = false;
     private Vector3 direction = new Vector3(1,1,0);
    
     // Start is called before the first frame update
     void Start()
     {
 
+        
         roomIndex = 2;
         float angleChange = Random.Range(-90f, 90f);
         Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
@@ -48,14 +51,41 @@ public class Enemy : MonoBehaviour
         //}
         currentRotation = rb.rotation;
         lastVelocity = rb.velocity;
+
+        
+        if(Mathf.Abs(rb.velocity.y) <= 0.01 && Mathf.Abs(rb.velocity.x) <= 0.01 && !vStart)
+        {
+            vTimer = (float)0.01;
+            vStart = true;
+
+           
+        }
+        if(Mathf.Abs(rb.velocity.y) > 0.01 || Mathf.Abs(rb.velocity.x) > 0.01)
+        {
+            vTimer = 0;
+            vStart = false;
+        }
+        if (vTimer > 0.00 && vTimer < 2)
+        {
+            vTimer += Time.deltaTime;
+        }
+        else if (vTimer >= 2)
+        {
+            Destroy(gameObject);
+        }
+
+
         if (!target)
         {
             getTarget();
         }
+
         
 
         else
         {
+           
+
             if (hasLineOfSight)
             {
                 RotateTowardsTarget();
@@ -100,7 +130,7 @@ public class Enemy : MonoBehaviour
         }
         if (hasLineOfSight)
         {
-            rb.velocity = transform.up * speed;
+            rb.velocity = transform.up * (speed+1);
             Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
         }
         else
@@ -138,6 +168,8 @@ public class Enemy : MonoBehaviour
     }
 
 
+
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -154,6 +186,8 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
+            
+           
             var speed = lastVelocity.magnitude;
             direction = Vector3.Reflect(lastVelocity.normalized, other.contacts[0].normal);
           

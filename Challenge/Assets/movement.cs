@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
     public SpriteRenderer render;
     bool faceRight = true;
     float horizontalInput;
-    public float movespeed = 7f;
+    public float movespeed = 5f;
     public Rigidbody2D rb;
     public float qTimer = 0;
     public String qDisplay;
@@ -74,7 +74,7 @@ public class movement : MonoBehaviour
         else if(eTime >= 0.25)
         {
             tr.emitting = false;
-            movespeed = 7f;
+            movespeed = 5f;
             isE = false;
             eTime = 0;
 
@@ -90,15 +90,15 @@ public class movement : MonoBehaviour
             speedTime = (float)(0.1);
             speed = false;
         }
-        if(speedTime > 0 && speedTime <= 10 && !isE )
+        if(speedTime > 0 && speedTime <= 5 && !isE )
         {
             speedTime += Time.deltaTime;
-            movespeed = 10f;
+            movespeed = 7f;
         }
-        else if(speedTime >= 10)
+        else if(speedTime >= 5)
         {
             speedTime = 0;
-            movespeed = 7f;
+            movespeed = 5f;
         }
 
     }

@@ -9,6 +9,7 @@ public class enemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPreFabs;
     [SerializeField] private bool canSpawn = true;
     private GameObject[] getCount;
+    public int maxEnemy;
 
     public int count;
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class enemySpawner : MonoBehaviour
         getCount = GameObject.FindGameObjectsWithTag("Enemy");
         count = getCount.Length;
 
-        if(count > 1)
+        if(count > maxEnemy)
         {
             canSpawn = false;
         }
@@ -43,20 +44,25 @@ public class enemySpawner : MonoBehaviour
   
         while(canSpawn)
         {
-            
+
+                
                 yield return wait;
                 float x = Random.RandomRange(-8, 24);
                 float y = Random.RandomRange(-4, 14);
-                transform.position = new Vector3(x, y, 0);
+                Vector3 pos = new Vector3(x, y, 0);
                 int ran = Random.Range(0, enemyPreFabs.Length);
                 GameObject enemyToSpawn = enemyPreFabs[ran];
-                Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+                
+               
+                Instantiate(enemyToSpawn, pos, Quaternion.identity);
+                
+                
             
             
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Win"))
         {
