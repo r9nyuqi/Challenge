@@ -33,6 +33,10 @@ public class movement : MonoBehaviour
     public float speedTime = 0;
     public bool speed = false;
 
+    //Jonathan - Sound Fx
+    public AudioSource myFx;
+    public AudioClip DashFx;
+
     [SerializeField] private TrailRenderer tr;
     
 
@@ -141,6 +145,8 @@ public class movement : MonoBehaviour
         isDash = true;
         movespeed = 22;
         tr.emitting = true;
+        //Jonathan - sound fx
+        myFx.PlayOneShot(DashFx);
         yield return new WaitForSeconds(dashTime);
         tr.emitting = false;
         isDash = false;

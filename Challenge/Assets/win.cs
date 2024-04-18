@@ -35,8 +35,11 @@ public class win : MonoBehaviour
         if (true)
         {
             yield return sec;
-            
-            SceneManager.LoadScene(roomIndex, LoadSceneMode.Single);
+
+            //SceneManager.LoadScene(roomIndex, LoadSceneMode.Single);
+            //Jonathan - commented this out for now since there isnt a second
+            //gameroom setup, so this will skip to the win page instead
+            SceneManager.LoadScene("WinRoom");
         }
     }
 }
