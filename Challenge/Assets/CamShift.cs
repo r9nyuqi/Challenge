@@ -26,7 +26,8 @@ public class Camshift : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        campJump();
+        //campJump();
+        camFollow();
 
     }
 
