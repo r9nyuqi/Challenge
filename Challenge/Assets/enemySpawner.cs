@@ -47,19 +47,65 @@ public class enemySpawner : MonoBehaviour
 
                 
                 yield return wait;
-                float x = Random.RandomRange(-8, 24);
-                float y = Random.RandomRange(-4, 14);
-                Vector3 pos = new Vector3(x, y, 0);
+                
                 int ran = Random.Range(0, enemyPreFabs.Length);
                 GameObject enemyToSpawn = enemyPreFabs[ran];
                 
                
-                Instantiate(enemyToSpawn, pos, Quaternion.identity);
+                Instantiate(enemyToSpawn, getSpawnableArea(), Quaternion.identity);
                 
                 
             
             
         }
+    }
+
+
+
+    private Vector3 getSpawnableArea()
+    {
+        int count = 0;
+        int max = 200;
+        int notSpawn1 = LayerMask.NameToLayer("Wall");
+        int notSpawn2 = LayerMask.NameToLayer("Player");
+
+        bool valid = false;
+        float x = Random.RandomRange(-8, 24);
+        float y = Random.RandomRange(-4, 14);
+        Vector3 position = new Vector3(x, y, 0);
+
+        while (!valid && count < max)
+        {
+            x = Random.RandomRange(-8, 24);
+            y = Random.RandomRange(-4, 14);
+            position = new Vector3(x, y, 0);
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 3f);
+            bool isInvalidCollision = false;
+            foreach (Collider2D collider in colliders)
+            {
+                if(collider.gameObject.layer == notSpawn1 || collider.gameObject.layer == notSpawn2)
+                {
+                    print("hit");
+                    isInvalidCollision = true;
+                    break;
+                }
+            }
+
+            if(!isInvalidCollision)
+            {
+                valid = true;
+            }
+            count++;
+        }
+
+        if(!valid)
+        {
+            Debug.LogWarning("no available spawn");
+        }
+
+        return position;
+
     }
 
     private void OnCollisionEnter2D(Collider2D other)

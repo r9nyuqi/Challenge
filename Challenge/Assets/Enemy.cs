@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     public float vTimer;
     public bool vStart = false;
     private Vector3 direction = new Vector3(1,1,0);
+    
    
     // Start is called before the first frame update
     void Start()
@@ -218,7 +219,7 @@ public class Enemy : MonoBehaviour
 
             yield return wait;
             print("test");
-            SceneManager.LoadScene(roomIndex);
+            SceneManager.LoadScene("LossRoom");
 
 
         }

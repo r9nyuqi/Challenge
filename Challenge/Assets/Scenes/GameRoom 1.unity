@@ -2399,7 +2399,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2555117
+      value: 0.17070614
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalScale.y
@@ -2411,7 +2411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.2108
+      value: -8.3096
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7507,7 +7507,7 @@ MonoBehaviour:
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   canSpawn: 1
-  maxEnemy: 11
+  maxEnemy: 20
   count: 0
 --- !u!4 &1741363738
 Transform:
