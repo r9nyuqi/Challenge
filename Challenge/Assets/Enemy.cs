@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     public Transform target;
-    public float speed = 7f;
+    public float speed;
     public Rigidbody2D rb;
     public float rotateSpeed = 0.0025f;
     public bool hasLineOfSight = false;

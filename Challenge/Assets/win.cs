@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class win : MonoBehaviour
 {
-    public int roomIndex;
+    public string nextRoom;
     // Start is called before the first frame update
     void Start()
     {
-        roomIndex = 3;
+         
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class win : MonoBehaviour
 
     private IEnumerator Win()
     {
-        WaitForSeconds sec = new WaitForSeconds(2);
+        WaitForSeconds sec = new WaitForSeconds(1);
         if (true)
         {
             yield return sec;
@@ -39,7 +39,7 @@ public class win : MonoBehaviour
             //SceneManager.LoadScene(roomIndex, LoadSceneMode.Single);
             //Jonathan - commented this out for now since there isnt a second
             //gameroom setup, so this will skip to the win page instead
-            SceneManager.LoadScene("WinRoom");
+            SceneManager.LoadScene(nextRoom);
         }
     }
 }

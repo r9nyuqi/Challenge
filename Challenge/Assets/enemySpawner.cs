@@ -52,7 +52,7 @@ public class enemySpawner : MonoBehaviour
                 GameObject enemyToSpawn = enemyPreFabs[ran];
                 
                
-                Instantiate(enemyToSpawn, getSpawnableArea(), Quaternion.identity);
+                Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
                 
                 
             
