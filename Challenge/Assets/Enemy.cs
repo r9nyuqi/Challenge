@@ -175,9 +175,9 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+           
             target = null;
-            StartCoroutine(Loss());
+            
           
         }
         else if (other.gameObject.CompareTag("Bullet"))
@@ -209,21 +209,7 @@ public class Enemy : MonoBehaviour
         //}
     }
 
-    private IEnumerator Loss()
-    {
-        WaitForSeconds wait = new WaitForSeconds(3);
-
-
-        if (true)
-        {
-
-            yield return wait;
-            print("test");
-            SceneManager.LoadScene("LossRoom");
-
-
-        }
-    }
+    
 
     private void setNewDistance()
     {
