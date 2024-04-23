@@ -60,11 +60,10 @@ public class movement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            print(SceneManager.GetActiveScene().name);
+            print(SceneManager.GetActiveScene().name); 
             if (SceneManager.GetActiveScene().name.Equals("GameRoom1") || SceneManager.GetActiveScene().name.Equals("GameRoom2"))
-            {      
-                print("skipped");
-                SceneManager.LoadScene("GameRoom3");
+            {
+                StartCoroutine(Skip());
             }
         }
         
@@ -227,6 +226,8 @@ public class movement : MonoBehaviour
         
     }
 
+    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("drops"))
@@ -260,6 +261,22 @@ public class movement : MonoBehaviour
             yield return wait;
             print("test");
             SceneManager.LoadScene("LossRoom");
+
+
+        }
+    }
+
+    private IEnumerator Skip()
+    {
+        WaitForSeconds wait = new WaitForSeconds(3);
+
+
+        if (true)
+        {
+
+            yield return wait;
+            print("test");
+            SceneManager.LoadScene("GameRoom3");
 
 
         }
