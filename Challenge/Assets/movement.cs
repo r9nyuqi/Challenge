@@ -127,14 +127,14 @@ public class movement : MonoBehaviour
             fTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.F) && !isF && fTimer <= 0 && loadF && fTime == 0)
+        if (Input.GetKey(KeyCode.F) && fTimer <= 0 && loadF)
         {
 
             heal(20);
-            isF = true;
+            
             fTimer = (float)(5);
             loadF = false;
-            fTime = (float)(0.1);
+            
 
 
         }
