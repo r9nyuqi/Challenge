@@ -58,7 +58,17 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+        if(Input.GetKey(KeyCode.Space))
+        {
+            print(SceneManager.GetActiveScene().name);
+            if (SceneManager.GetActiveScene().name.Equals("GameRoom1") || SceneManager.GetActiveScene().name.Equals("GameRoom2"))
+            {      
+                print("skipped");
+                SceneManager.LoadScene("GameRoom3");
+            }
+        }
+        
+        if (health <= 0)
         {
             Destroy(gameObject);
             StartCoroutine(Loss());
@@ -130,8 +140,7 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.F) && fTimer <= 0 && loadF)
         {
 
-            heal(20);
-            
+           
             fTimer = (float)(5);
             loadF = false;
             
@@ -161,7 +170,15 @@ public class movement : MonoBehaviour
 
     private void heal(float h)
     {
-        health += h;
+        if(health + h > 100)
+        {
+            health = 100;
+        }
+        else
+        {
+            health += h;
+        }
+        
         healthBar.fillAmount = health / 100;
     }
 
@@ -215,7 +232,7 @@ public class movement : MonoBehaviour
         if (other.gameObject.CompareTag("drops"))
         {
             Destroy(other.gameObject);
-            speed = true;
+            heal(20);
         }
         if(other.gameObject.CompareTag("Enemy"))
         {

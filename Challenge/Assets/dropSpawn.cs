@@ -14,6 +14,11 @@ public class dropSpawn : MonoBehaviour
     [SerializeField] private Transform right;
     [SerializeField] private Transform bot;
 
+   
+    public int maxDrops;
+
+    public int count;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +28,24 @@ public class dropSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        getCount = GameObject.FindGameObjectsWithTag("drops");
+        count = getCount.Length;
+
+        if (count > maxDrops)
+        {
+            canSpawn = false;
+        }
+        else
+        {
+            canSpawn = true;
+        }
+
     }
 
     private IEnumerator Spawner()
     {
         WaitForSeconds wait = new WaitForSeconds(spawnRate);
-        while (true)
+        while (canSpawn)
         {
             //getCount = GameObject.FindGameObjectsWithTag("Enemy");
             //int count = getCount.Length;
