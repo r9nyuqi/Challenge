@@ -6801,6 +6801,7 @@ MonoBehaviour:
   tr: {fileID: 2125939953}
   healthBar: {fileID: 777904438}
   health: 100
+  sp: {fileID: 2125939957}
 --- !u!50 &2125939956
 Rigidbody2D:
   serializedVersion: 4

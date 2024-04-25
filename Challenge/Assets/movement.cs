@@ -49,6 +49,7 @@ public class movement : MonoBehaviour
 
     public Image healthBar;
     public float health = 100;
+    public SpriteRenderer sp;
 
 
     // Start is called before the first frame update
@@ -69,9 +70,11 @@ public class movement : MonoBehaviour
         
         if (health <= 0)
         {
-            Destroy(gameObject);
-            StartCoroutine(Loss());
-            
+            SceneManager.LoadScene("LossRoom");
+            //sp.enabled = false;
+            //StartCoroutine(Loss());
+
+
         }
         if(!Input.GetKey(KeyCode.E))
         {
@@ -254,16 +257,15 @@ public class movement : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(3);
 
+        print("Test1");
 
-        if (true)
-        {
-
-            yield return wait;
-            print("test");
-            SceneManager.LoadScene("LossRoom");
+        yield return wait;
+        print("test");
+        SceneManager.LoadScene("LossRoom");
+        Destroy(gameObject);
 
 
-        }
+
     }
 
     private IEnumerator Skip()
