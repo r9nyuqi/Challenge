@@ -4357,6 +4357,7 @@ MonoBehaviour:
   tr: {fileID: 1100232854}
   healthBar: {fileID: 603199582}
   health: 100
+  sp: {fileID: 0}
 --- !u!50 &1100232852
 Rigidbody2D:
   serializedVersion: 4
@@ -6891,9 +6892,9 @@ RectTransform:
   - {fileID: 2143163908}
   m_Father: {fileID: 716906456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 810, y: 480}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -150, y: -60}
   m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077738951
