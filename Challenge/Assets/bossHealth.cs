@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class bossHealth : MonoBehaviour
 
     public Image healthBar;
     public float health = 100;
+    public GameObject bullet;
+    public Transform bulletPos;
+    public float timer;
+    public Transform player;
+    private bool hasLineOfSight = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +27,13 @@ public class bossHealth : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+        }
+        timer += Time.deltaTime;
+
+        if(timer >= 2 && hasLineOfSight)
+        {
+            timer = 0;
+            shoot();
         }
     }
 
@@ -37,4 +51,31 @@ public class bossHealth : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    private void FixedUpdate()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.position - transform.position);
+        if (ray.collider)
+        {
+            print(ray.collider.tag);
+            hasLineOfSight = ray.collider.CompareTag("Player");
+        }
+        if (hasLineOfSight)
+        {
+           
+            Debug.DrawRay(transform.position, player.position - transform.position, Color.green);
+        }
+        else
+        {
+
+            
+            Debug.DrawRay(transform.position, player.position - transform.position, Color.red);
+        }
+    }
+
+    void shoot()
+    {
+        Instantiate(bullet, bulletPos.position, Quaternion.identity);
+    }
+
 }

@@ -28,7 +28,7 @@ public class QCD : MonoBehaviour
         {
             isQ = true;
 
-            Timer = (float)(0.5);
+            Timer = (float)(0.3);
             loadQ = false;
         }
         else

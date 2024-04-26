@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
         {
             isQ = true;
 
-            qTimer = (float)(0.5);
+            qTimer = (float)(0.3);
             loadQ = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
 

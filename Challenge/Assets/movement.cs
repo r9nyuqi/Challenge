@@ -244,6 +244,12 @@ public class movement : MonoBehaviour
             Destroy(other.gameObject);
             TakeDamage(10);
         }
+
+        if(other.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(other.gameObject);
+            TakeDamage(10);
+        }
         
     }
 

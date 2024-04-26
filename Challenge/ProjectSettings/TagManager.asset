@@ -13,6 +13,9 @@ TagManager:
   - Wall
   - Spawner
   - Win
+  - EnemyBullet
+  - boss
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -24,7 +27,7 @@ TagManager:
   - Enemy
   - Bullet
   - Wall
-  - 
+  - EnemyBullet
   - 
   - 
   - 
