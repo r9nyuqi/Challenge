@@ -34,6 +34,7 @@ public class Shooting : MonoBehaviour
 
         if(Input.GetKey(KeyCode.R) && movement.getHasRightClick())
         {
+            print("shoot");
             Instantiate(rightclick, bulletTransform.position, Quaternion.identity);
         }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7235956205517306932}
   - component: {fileID: 8221313602633149181}
   - component: {fileID: 6475436413396898973}
+  - component: {fileID: 707390506053798162}
   m_Layer: 2
   m_Name: rightclickDrop
   m_TagString: rightclickdrop
@@ -105,7 +106,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 1152
@@ -128,7 +129,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -158,3 +159,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1394893, y: 0.1382587}
   m_EdgeRadius: 0
+--- !u!114 &707390506053798162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054219413715819705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751529d2df97b4ed5bf3aceb376442c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+  rb: {fileID: 0}
+  player: {fileID: 0}

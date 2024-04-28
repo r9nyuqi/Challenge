@@ -153,6 +153,7 @@ public class movement : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.R) && hasrightclick)
         {
+            
             hasrightclick = false;
         }
         //if (fTime > 0 && fTime < 0.25 && isF)

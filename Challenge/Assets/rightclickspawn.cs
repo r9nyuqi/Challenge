@@ -22,10 +22,12 @@ public class rightclickspawn : MonoBehaviour
 
     public float radius;
 
+    public float timer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Spawner());
+        //StartCoroutine(Spawner());
     }
 
     // Update is called once per frame
@@ -45,6 +47,24 @@ public class rightclickspawn : MonoBehaviour
             canSpawn = true;
         }
 
+        timer += Time.deltaTime;
+  
+        if(timer >= spawnRate)
+        {
+            if(canSpawn)
+            {
+                int ran = Random.Range(0, dropsPrefabs.Length);
+                GameObject DropsToSpawn = dropsPrefabs[ran];
+                int ranX = (int)Random.Range(left.position.x, right.position.x);
+                int ranY = (int)Random.Range(bot.position.y, top.position.y);
+                Vector2 pos = new Vector2(ranX, ranY);
+                if (notOverlapWall(pos))
+                {
+                    Instantiate(DropsToSpawn, pos, Quaternion.identity);
+                }
+            }
+            timer = 0;
+        }
     }
 
     private IEnumerator Spawner()
