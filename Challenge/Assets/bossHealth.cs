@@ -45,9 +45,9 @@ public class bossHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Bullet"))
+        if(other.gameObject.CompareTag("rightclick"))
         {
-            TakeDamage(5);
+            TakeDamage(20);
             Destroy(other.gameObject);
         }
     }
@@ -57,7 +57,7 @@ public class bossHealth : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.position - transform.position);
         if (ray.collider)
         {
-            print(ray.collider.tag);
+          
             hasLineOfSight = ray.collider.CompareTag("Player");
         }
         if (hasLineOfSight)

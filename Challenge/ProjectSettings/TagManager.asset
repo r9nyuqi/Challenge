@@ -16,6 +16,9 @@ TagManager:
   - EnemyBullet
   - boss
   - UI
+  - EntryMusic
+  - rightclick
+  - rightclickdrop
   layers:
   - Default
   - TransparentFX

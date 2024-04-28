@@ -1332,6 +1332,8 @@ MonoBehaviour:
   bulletTransform: {fileID: 940361238}
   qTimer: 0
   Display: 
+  rightclick: {fileID: 4054219413715819705, guid: 36d4774f389a44c078bc7e4de69a5208, type: 3}
+  movement: {fileID: 2125939955}
 --- !u!1 &570782862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1900,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9065299
+      value: 2.5528436
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1906,7 +1908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.92
+      value: 2.2188
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2024,6 +2026,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777904436}
   m_CullTransparentMesh: 1
+--- !u!1 &796371297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796371299}
+  - component: {fileID: 796371298}
+  m_Layer: 0
+  m_Name: rightclickspawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &796371298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796371297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbfd67f48eea467e82abc5949f5b096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 8
+  dropsPrefabs:
+  - {fileID: 4054219413715819705, guid: 16678f931c8724c9f8487277fee5e599, type: 3}
+  canSpawn: 1
+  top: {fileID: 853212398}
+  left: {fileID: 1610351026}
+  right: {fileID: 138497357}
+  bot: {fileID: 1554598746}
+  movement: {fileID: 2125939955}
+  maxDrops: 1
+  count: 0
+  radius: 0.5
+--- !u!4 &796371299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796371297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &809411597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,12 +2186,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 4
-  enemyPreFabs:
-  - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
-  - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
-  - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
+  dropsPrefabs: []
   canSpawn: 1
-  maxEnemy: 10
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  maxDrops: 10
   count: 0
 --- !u!4 &809411601
 Transform:
@@ -2763,7 +2822,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9065299
+      value: 2.8001206
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2771,7 +2830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9344
+      value: -1.9648
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3598,13 +3657,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
-  enemyPreFabs:
+  spawnRate: 1
+  dropsPrefabs:
   - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   canSpawn: 1
-  maxEnemy: 10
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  maxDrops: 10
   count: 0
 --- !u!4 &1448155524
 Transform:
@@ -3658,6 +3721,7 @@ MonoBehaviour:
   left: {fileID: 1610351026}
   right: {fileID: 138497357}
   bot: {fileID: 1554598746}
+  radius: 0.5
   maxDrops: 3
   count: 0
 --- !u!4 &1462197648
@@ -4625,12 +4689,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 4
-  enemyPreFabs:
-  - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
-  - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
-  - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
+  dropsPrefabs: []
   canSpawn: 1
-  maxEnemy: 10
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  maxDrops: 10
   count: 0
 --- !u!1 &1758576698
 GameObject:
@@ -6115,12 +6180,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 4
-  enemyPreFabs:
-  - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
-  - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
-  - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
+  dropsPrefabs: []
   canSpawn: 1
-  maxEnemy: 10
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  maxDrops: 10
   count: 0
 --- !u!4 &2047752480
 Transform:
@@ -6842,6 +6908,7 @@ MonoBehaviour:
   healthBar: {fileID: 777904438}
   health: 100
   sp: {fileID: 2125939957}
+  hasrightclick: 0
 --- !u!50 &2125939956
 Rigidbody2D:
   serializedVersion: 4
@@ -7125,6 +7192,7 @@ SceneRoots:
   - {fileID: 639015067}
   - {fileID: 616532590}
   - {fileID: 1462197648}
+  - {fileID: 796371299}
   - {fileID: 1389406019}
   - {fileID: 2046142755}
   - {fileID: 434424110}

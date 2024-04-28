@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dropSpawn : MonoBehaviour
+public class rightclickspawn : MonoBehaviour
 {
     [SerializeField] private float spawnRate = 1f;
     [SerializeField] private GameObject[] dropsPrefabs;
@@ -13,12 +13,14 @@ public class dropSpawn : MonoBehaviour
     [SerializeField] private Transform left;
     [SerializeField] private Transform right;
     [SerializeField] private Transform bot;
-    public float radius;
 
-   
+    public movement movement;
+
     public int maxDrops;
 
     public int count;
+
+    public float radius;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +31,12 @@ public class dropSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        getCount = GameObject.FindGameObjectsWithTag("drops");
+        getCount = GameObject.FindGameObjectsWithTag("rightclickdrop");
         count = getCount.Length;
 
-        if (count > maxDrops)
+        
+
+        if (count > maxDrops || movement.getHasRightClick())
         {
             canSpawn = false;
         }
@@ -52,12 +56,14 @@ public class dropSpawn : MonoBehaviour
             //int count = getCount.Length;
             //if(count < 1)
             {
+                 
                 yield return wait;
                 int ran = Random.Range(0, dropsPrefabs.Length);
                 GameObject DropsToSpawn = dropsPrefabs[ran];
                 int ranX = (int)Random.Range(left.position.x, right.position.x);
                 int ranY = (int)Random.Range(bot.position.y, top.position.y);
                 Vector2 pos = new Vector2(ranX, ranY);
+                
                 if(notOverlapWall(pos))
                 {
                     Instantiate(DropsToSpawn, pos, Quaternion.identity);
@@ -66,8 +72,9 @@ public class dropSpawn : MonoBehaviour
             }
 
         }
-    }
 
+
+    }
 
     private bool notOverlapWall(Vector2 position)
     {
@@ -75,5 +82,6 @@ public class dropSpawn : MonoBehaviour
         return (colliders.Length == 0);
     }
 
+  
 }
 

@@ -51,6 +51,8 @@ public class movement : MonoBehaviour
     public float health = 100;
     public SpriteRenderer sp;
 
+    public bool hasrightclick = false;
+
 
     // Start is called before the first frame update
 
@@ -148,6 +150,10 @@ public class movement : MonoBehaviour
             
 
 
+        }
+        if(Input.GetKey(KeyCode.R) && hasrightclick)
+        {
+            hasrightclick = false;
         }
         //if (fTime > 0 && fTime < 0.25 && isF)
         //{
@@ -250,7 +256,23 @@ public class movement : MonoBehaviour
             Destroy(other.gameObject);
             TakeDamage(10);
         }
+
+        if(other.gameObject.CompareTag("rightclickdrop"))
+        {
+            if(!hasrightclick)
+            {
+                Destroy(other.gameObject);
+                hasrightclick = true; 
+                    
+                
+            }
+        }
         
+    }
+
+    public bool getHasRightClick()
+    {
+        return hasrightclick;
     }
 
     public void TakeDamage(float damage)

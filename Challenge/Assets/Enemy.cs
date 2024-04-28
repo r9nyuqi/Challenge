@@ -131,7 +131,7 @@ public class Enemy : MonoBehaviour
         }
         if (hasLineOfSight)
         {
-            rb.velocity = transform.up * (speed+2);
+            rb.velocity = transform.up * (speed+1);
             Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
         }
         else
@@ -185,6 +185,11 @@ public class Enemy : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("rightclick"))
+        {
+           
+            Destroy(gameObject);
+        }
         else if (other.gameObject.CompareTag("Wall"))
         {
             
@@ -194,6 +199,7 @@ public class Enemy : MonoBehaviour
           
             
         }
+
         
         //else if (other.gameObject.CompareTag("Wall"))
         //{

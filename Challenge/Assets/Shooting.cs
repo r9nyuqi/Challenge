@@ -14,6 +14,10 @@ public class Shooting : MonoBehaviour
     public String Display;
     bool isQ = false;
     bool loadQ = true;
+
+    public GameObject rightclick;
+    
+    public movement movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,11 @@ public class Shooting : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
+        if(Input.GetKey(KeyCode.R) && movement.getHasRightClick())
+        {
+            Instantiate(rightclick, bulletTransform.position, Quaternion.identity);
+        }
+
         if (Input.GetKey(KeyCode.Mouse0) && !isQ && qTimer <= 0 && loadQ)
         {
             isQ = true;
@@ -38,6 +47,7 @@ public class Shooting : MonoBehaviour
 
 
         }
+
         else
         {
             isQ = false;
