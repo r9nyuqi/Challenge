@@ -6269,7 +6269,7 @@ MonoBehaviour:
   health: 100
   sp: {fileID: 1528738254}
   hasrightclick: 0
-  light: {fileID: 0}
+  light: {fileID: 833884530}
 --- !u!96 &1528738252
 TrailRenderer:
   serializedVersion: 3
