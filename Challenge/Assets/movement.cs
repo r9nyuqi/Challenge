@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class movement : MonoBehaviour
 {
+    
     public Sprite white = Resources.Load<Sprite>("whiteSquare");
     public Sprite red = Resources.Load<Sprite>("redSwatch");
     public SpriteRenderer render;
@@ -52,6 +54,8 @@ public class movement : MonoBehaviour
     public SpriteRenderer sp;
 
     public bool hasrightclick = false;
+
+    public Light2D light;
 
 
     // Start is called before the first frame update
@@ -174,6 +178,15 @@ public class movement : MonoBehaviour
             loadF = true;
         }
         fDisplay = updateTimer(fTimer);
+
+        if(hasrightclick)
+        {
+            light.color = new Color(1, 0, 1, 1);
+        }
+        else
+        {
+            light.color = new Color(1, 1, 1, 1);
+        }
 
     }
 
