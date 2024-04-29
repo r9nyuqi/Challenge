@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 4
+  spawnRate: 5
   dropsPrefabs:
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
@@ -562,7 +562,7 @@ MonoBehaviour:
   right: {fileID: 20299233}
   bot: {fileID: 1992086675}
   timer: 0
-  maxDrops: 10
+  maxDrops: 7
   count: 0
 --- !u!1 &73880974
 GameObject:
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 3
+  spawnRate: 5
   dropsPrefabs:
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
@@ -678,7 +678,7 @@ MonoBehaviour:
   right: {fileID: 20299233}
   bot: {fileID: 1992086675}
   timer: 0
-  maxDrops: 10
+  maxDrops: 7
   count: 0
 --- !u!4 &73880978
 Transform:
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 3
+  spawnRate: 5
   dropsPrefabs:
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
@@ -1902,7 +1902,7 @@ MonoBehaviour:
   right: {fileID: 20299233}
   bot: {fileID: 1992086675}
   timer: 0
-  maxDrops: 10
+  maxDrops: 7
   count: 0
 --- !u!4 &526600627
 Transform:
@@ -3701,7 +3701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 4
+  spawnRate: 5
   dropsPrefabs:
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
@@ -3712,7 +3712,7 @@ MonoBehaviour:
   right: {fileID: 20299233}
   bot: {fileID: 1992086675}
   timer: 0
-  maxDrops: 10
+  maxDrops: 7
   count: 0
 --- !u!4 &1137172445
 Transform:
