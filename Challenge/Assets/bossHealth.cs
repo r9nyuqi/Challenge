@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class bossHealth : MonoBehaviour
@@ -14,6 +15,8 @@ public class bossHealth : MonoBehaviour
     public float timer;
     public Transform player;
     private bool hasLineOfSight = false;
+
+    public Light2D light;
     
     // Start is called before the first frame update
     void Start()
@@ -32,8 +35,14 @@ public class bossHealth : MonoBehaviour
 
         if(timer >= 2 && hasLineOfSight)
         {
+            light.color = new Color(241, 90, 34, 1);
             timer = 0;
             shoot();
+
+        }
+        else
+        {
+            light.color = new Color(1, (float)0.92, (float)0.016, 1);
         }
     }
 

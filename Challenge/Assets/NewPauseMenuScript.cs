@@ -8,6 +8,7 @@ public class NewPauseMenuScript : MonoBehaviour
     public static bool Paused = false;
     public GameObject PauseMenuCanvas;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,8 @@ public class NewPauseMenuScript : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("GameRoom 1");
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene);
     }
 
     public void MainMenuButton()
