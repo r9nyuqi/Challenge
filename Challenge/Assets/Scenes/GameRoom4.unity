@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4335d6b5c91034a6ba54d5ad06f082fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 231366784}
 --- !u!1 &269065139
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,7 +4001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbfd67f48eea467e82abc5949f5b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 7
+  spawnRate: 6
   dropsPrefabs:
   - {fileID: 4054219413715819705, guid: 16678f931c8724c9f8487277fee5e599, type: 3}
   canSpawn: 1
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   movement: {fileID: 1528738251}
   maxDrops: 1
   count: 0
-  radius: 0.5
+  radius: 0.7
   timer: 0
 --- !u!4 &1073141038
 Transform:
