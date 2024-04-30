@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     private Vector3 direction = new Vector3(1,1,0);
     public float timer;
     public bool spawn;
+    public float dieTimer = 0;
+    public bool isdie = false;
+    public Animator animator; 
     
    
     // Start is called before the first frame update
@@ -41,7 +44,8 @@ public class Enemy : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
         direction = rotation * direction;
         spawn = true;
-       
+        animator = gameObject.GetComponent<Animator>(); 
+
 
 
     }
@@ -49,6 +53,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(isdie)
+        {
+            dieTimer += Time.deltaTime;
+            animator.SetTrigger("dietrigger");
+        }
+        if(dieTimer > 1)
+        {
+            Destroy(gameObject);
+        }
         //if(rb.velocity.x <0.5 && rb.velocity.y <0.5)
         //{
         //    rb.AddForce(transform.up * 15f);
@@ -193,7 +207,7 @@ public class Enemy : MonoBehaviour
         else if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            isdie = true;
         }
         else if (other.gameObject.CompareTag("rightclick"))
         {
