@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
     public float vTimer;
     public bool vStart = false;
     private Vector3 direction = new Vector3(1,1,0);
+    public float timer;
+    public bool spawn;
     
    
     // Start is called before the first frame update
@@ -38,6 +40,7 @@ public class Enemy : MonoBehaviour
         float angleChange = Random.Range(-90f, 90f);
         Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
         direction = rotation * direction;
+        spawn = true;
        
 
 
@@ -53,6 +56,13 @@ public class Enemy : MonoBehaviour
         currentRotation = rb.rotation;
         lastVelocity = rb.velocity;
 
+        timer += Time.deltaTime;
+
+
+        if(timer >= 1)
+        {
+            spawn = false;
+        }
         
         if(Mathf.Abs(rb.velocity.y) <= 0.01 && Mathf.Abs(rb.velocity.x) <= 0.01 && !vStart)
         {
@@ -176,7 +186,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
            
-            target = null;
+            
             
           
         }

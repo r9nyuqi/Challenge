@@ -5470,6 +5470,7 @@ MonoBehaviour:
   sp: {fileID: 1528738254}
   hasrightclick: 0
   light: {fileID: 833884530}
+  enemy: {fileID: 3656908316999792417, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
 --- !u!96 &1528738252
 TrailRenderer:
   serializedVersion: 3
