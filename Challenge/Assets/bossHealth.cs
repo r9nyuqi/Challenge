@@ -35,7 +35,7 @@ public class bossHealth : MonoBehaviour
 
         if(timer >= 2 && hasLineOfSight)
         {
-            light.color = new Color(241, 90, 34, 1);
+            light.color = new Color((float)0.24, (float)0.09, (float)(0.03), 1);
             timer = 0;
             shoot();
 

@@ -2998,7 +2998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use WASD or Arrow Keys to move
+  m_text: Use WASD to move
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3254,6 +3254,8 @@ MonoBehaviour:
   bulletTransform: {fileID: 423755636}
   qTimer: 0
   Display: 
+  rightclick: {fileID: 0}
+  movement: {fileID: 0}
 --- !u!1 &847424253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,6 +4360,8 @@ MonoBehaviour:
   healthBar: {fileID: 603199582}
   health: 100
   sp: {fileID: 0}
+  hasrightclick: 0
+  light: {fileID: 0}
 --- !u!50 &1100232852
 Rigidbody2D:
   serializedVersion: 4
@@ -4844,6 +4848,8 @@ MonoBehaviour:
   bot: {fileID: 879111332}
   maxDrops: 0
   count: 0
+  radius: 0
+  timer: 0
 --- !u!1 &1377162265
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,12 +5192,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 5
-  enemyPreFabs:
-  - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
-  - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
-  - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
+  dropsPrefabs: []
   canSpawn: 1
-  maxEnemy: 0
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  timer: 0
+  maxDrops: 0
   count: 0
 --- !u!4 &1661217921
 Transform:
@@ -5312,12 +5320,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 5
-  enemyPreFabs:
-  - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
-  - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
-  - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
+  dropsPrefabs: []
   canSpawn: 1
-  maxEnemy: 0
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  timer: 0
+  maxDrops: 0
   count: 0
 --- !u!4 &1683153460
 Transform:
@@ -5620,12 +5630,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 1
-  enemyPreFabs:
-  - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
-  - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
-  - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
+  dropsPrefabs: []
   canSpawn: 1
-  maxEnemy: 20
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  timer: 0
+  maxDrops: 0
   count: 0
 --- !u!4 &1741363738
 Transform:
@@ -6222,12 +6234,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 5
-  enemyPreFabs:
-  - {fileID: 7318635936447945075, guid: c0f1945a62dba4fb281c237404c86f9a, type: 3}
-  - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
-  - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
+  dropsPrefabs: []
   canSpawn: 1
-  maxEnemy: 0
+  top: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  bot: {fileID: 0}
+  timer: 0
+  maxDrops: 0
   count: 0
 --- !u!4 &1935356406
 Transform:

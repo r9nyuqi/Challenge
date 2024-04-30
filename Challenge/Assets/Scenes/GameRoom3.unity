@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
+  spawnRate: 6
   dropsPrefabs:
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
+  spawnRate: 3
   dropsPrefabs:
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8030b398026c5405d91d929cbd5709d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
+  spawnRate: 4
   dropsPrefabs:
   - {fileID: 6582915983173378765, guid: a2eab8863be444a90bf89bf8c5cd0585, type: 3}
   - {fileID: 6610532832930165257, guid: d69211ce838004f8388a0f7ab06acd3f, type: 3}
@@ -3570,7 +3570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbfd67f48eea467e82abc5949f5b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 3
+  spawnRate: 6
   dropsPrefabs:
   - {fileID: 4054219413715819705, guid: 16678f931c8724c9f8487277fee5e599, type: 3}
   canSpawn: 1
@@ -6403,7 +6403,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.312
-  m_Color: {r: 1, g: 0.97088087, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.9142746, b: 0, a: 1}
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
