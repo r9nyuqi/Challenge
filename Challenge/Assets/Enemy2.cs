@@ -57,7 +57,7 @@ public class Enemy2 : MonoBehaviour
         if (isdie)
         {
             dieTimer += Time.deltaTime;
-            
+            animator.SetTrigger("dietrigger");
             rb.excludeLayers = LayerMask.GetMask("Player");
             rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
             rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
@@ -220,6 +220,11 @@ public class Enemy2 : MonoBehaviour
             isdie = true;
         }
         else if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(other.gameObject);
+            isdie = true;
+        }
+        else if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
             isdie = true;

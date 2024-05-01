@@ -14,6 +14,7 @@ public class movement : MonoBehaviour
     public SpriteRenderer render;
     bool faceRight = true;
     float horizontalInput;
+    float verticalInput;
     public float movespeed = 5f;
     public Rigidbody2D rb;
     public float qTimer = 0;
@@ -89,7 +90,10 @@ public class movement : MonoBehaviour
         if(!Input.GetKey(KeyCode.E))
         {
             move.x = Input.GetAxisRaw("Horizontal");
+
+            horizontalInput = Input.GetAxisRaw("Horizontal");
             move.y = Input.GetAxisRaw("Vertical");
+            verticalInput = Input.GetAxisRaw("Vertical");
         }
 
         if (eTimer > 0)
@@ -211,8 +215,8 @@ public class movement : MonoBehaviour
     private void FixedUpdate()
     {
        
-        rb.MovePosition(rb.position + move * movespeed * Time.deltaTime);
-        rb.velocity = new Vector2(horizontalInput * movespeed, rb.velocity.y);
+        //rb.MovePosition(rb.position + move * movespeed * Time.deltaTime);
+        rb.velocity = new Vector2(horizontalInput * movespeed, verticalInput * movespeed);
         animator.SetFloat("speed", Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
 
     }
@@ -264,18 +268,26 @@ public class movement : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Enemy"))
         {
-            if(!enemy.spawn && !enemy.isdie)
+            if(enemy.spawn || enemy.isdie)
             {
                 
+                
+            }
+            else
+            {
                 TakeDamage(10);
             }
             
         }
         if (other.gameObject.CompareTag("Enemy2"))
         {
-            if (!enemy2.spawn && !enemy2.isdie)
+            if (enemy2.spawn || enemy2.isdie)
             {
 
+
+            }
+            else
+            {
                 TakeDamage(10);
             }
 
@@ -283,9 +295,13 @@ public class movement : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy3"))
         {
-            if (!enemy3.spawn && !enemy3.isdie)
+            if (enemy3.spawn || enemy3.isdie)
             {
 
+
+            }
+            else
+            {
                 TakeDamage(10);
             }
 

@@ -17,6 +17,7 @@ public class bossHealth : MonoBehaviour
     private bool hasLineOfSight = false;
 
     public Light2D light;
+    public bool isdie = false;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class bossHealth : MonoBehaviour
     {
         if(health <= 0)
         {
+            isdie = true;
             Destroy(gameObject);
         }
         timer += Time.deltaTime;

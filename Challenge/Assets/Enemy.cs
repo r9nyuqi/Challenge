@@ -224,6 +224,11 @@ public class Enemy : MonoBehaviour
             Destroy(other.gameObject);
             isdie = true;
         }
+        else if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(other.gameObject);
+            isdie = true;
+        }
         else if (other.gameObject.CompareTag("Wall"))
         {
             

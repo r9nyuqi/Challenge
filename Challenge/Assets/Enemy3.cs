@@ -58,6 +58,7 @@ public class Enemy3 : MonoBehaviour
         {
             dieTimer += Time.deltaTime;
             rb.excludeLayers = LayerMask.GetMask("Player");
+            animator.SetTrigger("dietrigger");
             rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
             rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
         }
@@ -220,6 +221,12 @@ public class Enemy3 : MonoBehaviour
         else if (other.gameObject.CompareTag("rightclick"))
         {
 
+            isdie = true;
+        }
+
+        else if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(other.gameObject);
             isdie = true;
         }
         else if (other.gameObject.CompareTag("Wall"))

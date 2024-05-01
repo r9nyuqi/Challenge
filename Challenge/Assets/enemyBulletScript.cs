@@ -29,10 +29,6 @@ public class enemyBulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
+        
     }
 }

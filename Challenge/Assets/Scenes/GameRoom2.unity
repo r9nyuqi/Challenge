@@ -2057,6 +2057,7 @@ MonoBehaviour:
   timer: 0
   player: {fileID: 1528738250}
   light: {fileID: 1469624830}
+  isdie: 0
 --- !u!4 &491381290
 Transform:
   m_ObjectHideFlags: 0
@@ -3725,7 +3726,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1262392482}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -4643,8 +4644,8 @@ MonoBehaviour:
   updown: 0
   leftright: 16.8
   next: 10
-  followSmooth: 0.2
-  followV: 2
+  followSmooth: 0
+  followV: 10000
 --- !u!81 &1262392481
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6071,9 +6072,9 @@ RectTransform:
   - {fileID: 1575375023}
   m_Father: {fileID: 1024697075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150, y: -60}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498152297
@@ -8003,6 +8004,7 @@ GameObject:
   - component: {fileID: 2107216351}
   - component: {fileID: 2107216353}
   - component: {fileID: 2107216352}
+  - component: {fileID: 2107216354}
   m_Layer: 5
   m_Name: Boarder
   m_TagString: Untagged
@@ -8068,6 +8070,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107216350}
   m_CullTransparentMesh: 1
+--- !u!114 &2107216354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107216350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2622ae38f45fe47b3aac60ebb49582f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bosshealth: {fileID: 491381289}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
