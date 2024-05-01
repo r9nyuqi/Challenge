@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
-public class Enemy : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
     public Transform target;
     public float speed;
@@ -26,25 +26,25 @@ public class Enemy : MonoBehaviour
 
     public float vTimer;
     public bool vStart = false;
-    private Vector3 direction = new Vector3(1,1,0);
+    private Vector3 direction = new Vector3(1, 1, 0);
     public float timer;
     public bool spawn;
     public float dieTimer = 0;
     public bool isdie = false;
-    public Animator animator; 
-    
-   
+    public Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
 
-        
+
         roomIndex = 2;
         float angleChange = Random.Range(-90f, 90f);
         Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
         direction = rotation * direction;
         spawn = true;
-        animator = gameObject.GetComponent<Animator>(); 
+        animator = gameObject.GetComponent<Animator>();
 
 
 
@@ -54,16 +54,16 @@ public class Enemy : MonoBehaviour
     void Update()
     {
 
-        if(isdie)
+        if (isdie)
         {
             dieTimer += Time.deltaTime;
-            animator.SetTrigger("dietrigger");
+            
             rb.excludeLayers = LayerMask.GetMask("Player");
             rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
             rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
         }
 
-        if(dieTimer >= 1)
+        if (dieTimer >= 1)
         {
             print("destroy");
             Destroy(gameObject);
@@ -78,19 +78,19 @@ public class Enemy : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if(timer >= 1)
+        if (timer >= 1)
         {
             spawn = false;
         }
-        
-        if(Mathf.Abs(rb.velocity.y) <= 0.01 && Mathf.Abs(rb.velocity.x) <= 0.01 && !vStart)
+
+        if (Mathf.Abs(rb.velocity.y) <= 0.01 && Mathf.Abs(rb.velocity.x) <= 0.01 && !vStart)
         {
             vTimer = (float)0.01;
             vStart = true;
 
-           
+
         }
-        if(Mathf.Abs(rb.velocity.y) > 0.01 || Mathf.Abs(rb.velocity.x) > 0.01)
+        if (Mathf.Abs(rb.velocity.y) > 0.01 || Mathf.Abs(rb.velocity.x) > 0.01)
         {
             vTimer = 0;
             vStart = false;
@@ -110,16 +110,16 @@ public class Enemy : MonoBehaviour
             getTarget();
         }
 
-        
+
 
         else
         {
-           
+
 
             if (hasLineOfSight)
             {
                 RotateTowardsTarget();
-                
+
             }
             //if(bounce)
             //{
@@ -137,11 +137,11 @@ public class Enemy : MonoBehaviour
             //{
             //    bounceTime = 0;
             //}
-            
-            
+
+
         }
 
-     
+
 
 
 
@@ -160,12 +160,12 @@ public class Enemy : MonoBehaviour
         }
         if (hasLineOfSight)
         {
-            rb.velocity = transform.up * (speed+1);
+            rb.velocity = transform.up * (speed + 1);
             Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
         }
         else
         {
-         
+
             rb.velocity = direction * speed;
             Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
         }
@@ -174,11 +174,11 @@ public class Enemy : MonoBehaviour
 
     private void getTarget()
     {
-        if(GameObject.FindGameObjectWithTag("Player").transform)
+        if (GameObject.FindGameObjectWithTag("Player").transform)
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
-       
+
     }
 
     private void RotateTowardsTarget()
@@ -186,7 +186,7 @@ public class Enemy : MonoBehaviour
         Vector2 targetDirection = target.position - transform.position;
         float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
         Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.localRotation = Quaternion.Slerp(transform.localRotation,q,rotateSpeed);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
 
 
     }
@@ -207,7 +207,7 @@ public class Enemy : MonoBehaviour
 
 
             isdie = true;
-          
+
         }
         else if (other.gameObject.CompareTag("Bullet"))
         {
@@ -226,15 +226,15 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
-            
-           
+
+
             var speed = lastVelocity.magnitude;
             direction = Vector3.Reflect(lastVelocity.normalized, other.contacts[0].normal);
-          
-            
+
+
         }
 
-        
+
         //else if (other.gameObject.CompareTag("Wall"))
         //{
         //    Vector3 newDir = new Vector3(transform.position.x, transform.position.y, 0);
@@ -249,7 +249,7 @@ public class Enemy : MonoBehaviour
         //}
     }
 
-    
+
 
     private void setNewDistance()
     {
@@ -257,5 +257,5 @@ public class Enemy : MonoBehaviour
     }
 
 
-   
+
 }

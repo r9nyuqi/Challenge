@@ -213,7 +213,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 2
   rb: {fileID: 2053517809968112358}
-  rotateSpeed: 0.025
+  rotateSpeed: 0.25
   hasLineOfSight: 0
   maxDistance: 5
   range: 0.5
@@ -225,6 +225,11 @@ MonoBehaviour:
   roomIndex: 1
   vTimer: 0
   vStart: 0
+  timer: 0
+  spawn: 0
+  dieTimer: 0
+  isdie: 0
+  animator: {fileID: 0}
 --- !u!61 &6526477725422840847
 BoxCollider2D:
   m_ObjectHideFlags: 0

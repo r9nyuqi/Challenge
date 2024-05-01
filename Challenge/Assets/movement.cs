@@ -58,6 +58,8 @@ public class movement : MonoBehaviour
     public Light2D light;
 
     public Enemy enemy;
+    public Enemy2 enemy2;
+    public Enemy3 enemy3;
 
 
     // Start is called before the first frame update
@@ -262,15 +264,35 @@ public class movement : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Enemy"))
         {
-            if(!enemy.spawn)
+            if(!enemy.spawn && !enemy.isdie)
             {
-                Destroy(other.gameObject);
+                
                 TakeDamage(10);
             }
             
         }
+        if (other.gameObject.CompareTag("Enemy2"))
+        {
+            if (!enemy2.spawn && !enemy2.isdie)
+            {
 
-        if(other.gameObject.CompareTag("EnemyBullet"))
+                TakeDamage(10);
+            }
+
+        }
+
+        if (other.gameObject.CompareTag("Enemy3"))
+        {
+            if (!enemy3.spawn && !enemy3.isdie)
+            {
+
+                TakeDamage(10);
+            }
+
+        }
+
+
+        if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
             TakeDamage(10);

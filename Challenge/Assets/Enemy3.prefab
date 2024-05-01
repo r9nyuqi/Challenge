@@ -93,11 +93,11 @@ GameObject:
   - component: {fileID: 7107620049021855045}
   - component: {fileID: 6774543465195789924}
   - component: {fileID: 1017007620766835137}
-  - component: {fileID: 1138631755351906159}
   - component: {fileID: 2042574162855867906}
+  - component: {fileID: 6923548427807371385}
   m_Layer: 2
   m_Name: Enemy3
-  m_TagString: Enemy
+  m_TagString: Enemy3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,33 +197,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &1138631755351906159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6582915983173378765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cb5abd99b954616a4dcdf1e79ec27a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 2
-  rb: {fileID: 1017007620766835137}
-  rotateSpeed: 0.025
-  hasLineOfSight: 0
-  maxDistance: 5
-  range: 0.5
-  bounce: 0
-  bounceTime: 0
-  currentRotation: 0
-  loss: 0
-  lossTime: 0
-  roomIndex: 2
-  vTimer: 0
-  vStart: 0
 --- !u!58 &2042574162855867906
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -259,3 +232,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5688889
+--- !u!114 &6923548427807371385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582915983173378765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af45ff0d45ae041849807f4f2d7e80bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 2
+  rb: {fileID: 1017007620766835137}
+  rotateSpeed: 0.25
+  hasLineOfSight: 0
+  maxDistance: 0
+  range: 0
+  bounce: 0
+  bounceTime: 0
+  currentRotation: 0
+  loss: 0
+  lossTime: 0
+  roomIndex: 0
+  vTimer: 0
+  vStart: 0
+  timer: 0
+  spawn: 0
+  dieTimer: 0
+  isdie: 0
+  animator: {fileID: 0}

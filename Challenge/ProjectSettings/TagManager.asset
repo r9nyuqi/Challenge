@@ -19,6 +19,8 @@ TagManager:
   - EntryMusic
   - rightclick
   - rightclickdrop
+  - Enemy2
+  - Enemy3
   layers:
   - Default
   - TransparentFX
