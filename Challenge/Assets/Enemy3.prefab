@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1017007620766835137}
   - component: {fileID: 2042574162855867906}
   - component: {fileID: 6923548427807371385}
+  - component: {fileID: 1009157572644498827}
   m_Layer: 2
   m_Name: Enemy3
   m_TagString: Enemy3
@@ -264,3 +265,24 @@ MonoBehaviour:
   dieTimer: 0
   isdie: 0
   animator: {fileID: 0}
+--- !u!95 &1009157572644498827
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582915983173378765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b06686ba7e1d1459790804d1e2512e72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
