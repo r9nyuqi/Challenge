@@ -18,11 +18,14 @@ public class bossHealth : MonoBehaviour
 
     public Light2D light;
     public bool isdie = false;
-    
+    public float dieTimer = 0;
+    public Rigidbody2D rb;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-       
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,20 @@ public class bossHealth : MonoBehaviour
         if(health <= 0)
         {
             isdie = true;
+            
+        }
+        if (isdie)
+        {
+            dieTimer += Time.deltaTime;
+       
+            rb.excludeLayers = LayerMask.GetMask("Player");
+            rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
+            
+        }
+
+        if (dieTimer >= 1)
+        {
+            print("destroy");
             Destroy(gameObject);
         }
         timer += Time.deltaTime;

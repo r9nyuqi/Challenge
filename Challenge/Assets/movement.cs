@@ -61,16 +61,45 @@ public class movement : MonoBehaviour
     public Enemy enemy;
     public Enemy2 enemy2;
     public Enemy3 enemy3;
+    public bool isheal = false;
+    public float healtimer = 0;
 
+    public AudioSource healSound;
 
     // Start is called before the first frame update
 
     Vector2 move;
     Animator animator;
+
+    void Start()
+    {
+        healSound = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+
+        if (isheal)
+        {
+            healtimer += Time.deltaTime;
+            light.color = new Color(0, 1, 0, 1);
+        }
+        if(healtimer >= 0.5)
+        {
+            isheal = false;
+            healtimer = 0;
+            
+        }
+        if (hasrightclick && !isheal)
+        {
+            light.color = new Color(1, 0, 1, 1);
+        }
+        if(!hasrightclick && !isheal)
+        {
+            light.color = new Color(1, 1, 1, 1);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
         {
             print(SceneManager.GetActiveScene().name); 
             if (SceneManager.GetActiveScene().name.Equals("GameRoom1") || SceneManager.GetActiveScene().name.Equals("GameRoom2"))
@@ -163,7 +192,7 @@ public class movement : MonoBehaviour
 
 
         }
-        if(Input.GetKey(KeyCode.R) && hasrightclick)
+        if(Input.GetKey(KeyCode.Mouse1) && hasrightclick)
         {
             
             hasrightclick = false;
@@ -187,14 +216,7 @@ public class movement : MonoBehaviour
         }
         fDisplay = updateTimer(fTimer);
 
-        if(hasrightclick)
-        {
-            light.color = new Color(1, 0, 1, 1);
-        }
-        else
-        {
-            light.color = new Color(1, 1, 1, 1);
-        }
+        
 
     }
 
@@ -263,6 +285,7 @@ public class movement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("drops"))
         {
+            isheal = true;
             Destroy(other.gameObject);
             heal(20);
         }

@@ -9,6 +9,8 @@ public class bulletScript : MonoBehaviour
     private Rigidbody2D rb;
     public float force;
     public float timer = 0;
+
+    public AudioSource hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,26 @@ public class bulletScript : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
+
+        }
+        if (other.gameObject.CompareTag("Enemy1"))
+        {
+            hit.Play();
+
+        }
+        if (other.gameObject.CompareTag("Enemy2"))
+        {
+            hit.Play();
+
+        }
+        if (other.gameObject.CompareTag("Enemy3"))
+        {
+            hit.Play();
+
+        }
+        if (other.gameObject.CompareTag("boss"))
+        {
+            hit.Play();
 
         }
     }
