@@ -7,10 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("GameRoom1");
+        SceneManager.LoadScene("GameRoom3");
     }
     public void OpenInstructions()
     {
         SceneManager.LoadScene("instructionsScene");
+    }
+
+    public void tutorial()
+    {
+        SceneManager.LoadScene("GameRoom1");
     }
 }

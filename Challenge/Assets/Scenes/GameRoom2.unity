@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80681026806944b34af111d5c7c8f99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextRoom: GameRoom3
+  nextRoom: mainMenu
 --- !u!4 &231366784
 Transform:
   m_ObjectHideFlags: 0
