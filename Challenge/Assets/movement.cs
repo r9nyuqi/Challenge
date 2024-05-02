@@ -65,7 +65,9 @@ public class movement : MonoBehaviour
     public float healtimer = 0;
 
     public AudioSource healSound;
-
+    public AudioSource powerUp;
+    public AudioSource dash;
+    public AudioSource hit;
     // Start is called before the first frame update
 
     Vector2 move;
@@ -73,7 +75,7 @@ public class movement : MonoBehaviour
 
     void Start()
     {
-        healSound = GetComponent<AudioSource>();
+        
     }
     // Update is called once per frame
     void Update()
@@ -132,7 +134,7 @@ public class movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E) && !isE && eTimer <= 0 && loadE && eTime ==0)
         {
-
+            dash.Play(); 
             movespeed = 15f;
             isE = true;
             eTimer = (float)(3);
@@ -288,6 +290,7 @@ public class movement : MonoBehaviour
             isheal = true;
             Destroy(other.gameObject);
             heal(20);
+            healSound.Play();
         }
         if(other.gameObject.CompareTag("Enemy"))
         {
@@ -342,7 +345,8 @@ public class movement : MonoBehaviour
             if(!hasrightclick)
             {
                 Destroy(other.gameObject);
-                hasrightclick = true; 
+                hasrightclick = true;
+                powerUp.Play();
                     
                 
             }
@@ -357,6 +361,7 @@ public class movement : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        hit.Play();
         health -= damage;
         healthBar.fillAmount = health / 100;
     }

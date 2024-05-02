@@ -482,6 +482,11 @@ MonoBehaviour:
   dieTimer: 0
   rb: {fileID: 0}
   animator: {fileID: 0}
+  wallbreak: {fileID: 0}
+  hit: {fileID: 0}
+  sp1: {fileID: 0}
+  sp2: {fileID: 0}
+  sp3: {fileID: 0}
 --- !u!4 &36258503
 Transform:
   m_ObjectHideFlags: 0
@@ -6877,6 +6882,9 @@ MonoBehaviour:
   isheal: 0
   healtimer: 0
   healSound: {fileID: 0}
+  powerUp: {fileID: 0}
+  dash: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!96 &1528738252
 TrailRenderer:
   serializedVersion: 3

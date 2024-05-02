@@ -31,7 +31,8 @@ public class Enemy : MonoBehaviour
     public bool spawn;
     public float dieTimer = 0;
     public bool isdie = false;
-    public Animator animator; 
+    public Animator animator;
+    public AudioSource hit;
     
    
     // Start is called before the first frame update
@@ -204,28 +205,31 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-
+            hit.Play();
 
             isdie = true;
           
         }
         else if (other.gameObject.CompareTag("Bullet"))
         {
+            hit.Play();
             Destroy(other.gameObject);
             isdie = true;
         }
         else if (other.gameObject.CompareTag("rightclick"))
         {
-
+            hit.Play();
             isdie = true;
         }
         else if (other.gameObject.CompareTag("Bullet"))
         {
+            hit.Play();
             Destroy(other.gameObject);
             isdie = true;
         }
         else if (other.gameObject.CompareTag("EnemyBullet"))
         {
+            hit.Play();
             Destroy(other.gameObject);
             isdie = true;
         }

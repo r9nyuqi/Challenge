@@ -21,6 +21,10 @@ public class bossHealth : MonoBehaviour
     public float dieTimer = 0;
     public Rigidbody2D rb;
     public Animator animator;
+    public AudioSource wallbreak;
+    public AudioSource hit;
+
+    public Sprite sp1, sp2, sp3;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +35,34 @@ public class bossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+
+        animator.SetFloat("Health", health);
+
+        if(health < 75 && health >= 50)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp1;
+        }
+        else if (health < 50 && health >= 25)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp2;
+        }
+        else if (health < 25)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp3;
+        }
+        if (health <= 0)
         {
             isdie = true;
+            health = 1;
+            wallbreak.Play();
+            animator.SetTrigger("Bossdie");
             
         }
         if (isdie)
         {
+
             dieTimer += Time.deltaTime;
-       
+            
             rb.excludeLayers = LayerMask.GetMask("Player");
             rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
             
@@ -77,6 +100,7 @@ public class bossHealth : MonoBehaviour
         {
             TakeDamage(20);
             Destroy(other.gameObject);
+            hit.Play();
         }
     }
 

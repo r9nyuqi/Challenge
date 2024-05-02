@@ -32,7 +32,7 @@ public class Enemy3 : MonoBehaviour
     public float dieTimer = 0;
     public bool isdie = false;
     public Animator animator;
-
+    public AudioSource hit;
 
     // Start is called before the first frame update
     void Start()
@@ -204,7 +204,7 @@ public class Enemy3 : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
 
-
+            hit.Play();
             isdie = true;
 
         }
@@ -212,22 +212,26 @@ public class Enemy3 : MonoBehaviour
         {
             Destroy(other.gameObject);
             isdie = true;
+            hit.Play();
         }
         else if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
             isdie = true;
+            hit.Play();
         }
         else if (other.gameObject.CompareTag("rightclick"))
         {
 
             isdie = true;
+            hit.Play();
         }
 
         else if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
             isdie = true;
+            hit.Play();
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
