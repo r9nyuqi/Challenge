@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0dc68e6597f6b4b2e937fdb6a3288439
+guid: e7acd29fc57dc44ceb336ee176bd3f02
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 535
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RedSquare (2)_0
+      name: wallspritehealth_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1539
-        width: 513
-        height: 513
+        y: 0
+        width: 1857.5
+        height: 7195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddcdda13277a943fbb9a91fe42b99b1d
-      internalID: -698177856
+      spriteID: 633c8afdaba1e4b548a54dac663f8ba2
+      internalID: 1317908374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedSquare (2)_1
+      name: wallspritehealth_1
       rect:
         serializedVersion: 2
-        x: 513
-        y: 1539
-        width: 513
-        height: 513
+        x: 1857
+        y: 0
+        width: 1857.5
+        height: 7195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54ef920db4fe5470884c6413701daca8
-      internalID: 553799621
+      spriteID: 9b9e9f718e2a341f5ad8c8924a9bd3b6
+      internalID: -1050813256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedSquare (2)_2
+      name: wallspritehealth_2
       rect:
         serializedVersion: 2
-        x: 1026
-        y: 1539
-        width: 513
-        height: 513
+        x: 3714
+        y: 0
+        width: 1857.5
+        height: 7195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26f33b3ff901e4e3ca9377dc7e924c4e
-      internalID: -1543006514
+      spriteID: 3de3a2c271bf8409e9c931f043449162
+      internalID: -338930926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedSquare (2)_3
+      name: wallspritehealth_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1026
-        width: 513
-        height: 513
+        x: 5571
+        y: 0
+        width: 1857.5
+        height: 7195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,113 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee8acee5d52c043b4bd6daf72afbb2f0
-      internalID: -1541655395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedSquare (2)_4
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 1026
-        width: 513
-        height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 695e9d9333f8044578549491bceead7a
-      internalID: -144098115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedSquare (2)_5
-      rect:
-        serializedVersion: 2
-        x: 1026
-        y: 1026
-        width: 513
-        height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f820917d101b450094745d1677f418c
-      internalID: 1863294685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedSquare (2)_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 513
-        width: 513
-        height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79d0bdf60b9704061a67ac7ac9053911
-      internalID: 1160973690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedSquare (2)_7
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 513
-        width: 513
-        height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6080a8c6d85f4ffe9f131e5ddcb048a
-      internalID: -1178382156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedSquare (2)_8
-      rect:
-        serializedVersion: 2
-        x: 1026
-        y: 513
-        width: 513
-        height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfcb5d79abe4943f68229e6451c17e04
-      internalID: 784745496
+      spriteID: ed9402a0d98a74f808dceed142af35e8
+      internalID: 1737436983
       vertices: []
       indices: 
       edges: []
@@ -309,15 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RedSquare (2)_0: -698177856
-      RedSquare (2)_1: 553799621
-      RedSquare (2)_2: -1543006514
-      RedSquare (2)_3: -1541655395
-      RedSquare (2)_4: -144098115
-      RedSquare (2)_5: 1863294685
-      RedSquare (2)_6: 1160973690
-      RedSquare (2)_7: -1178382156
-      RedSquare (2)_8: 784745496
+      wallspritehealth_0: 1317908374
+      wallspritehealth_1: -1050813256
+      wallspritehealth_2: -338930926
+      wallspritehealth_3: 1737436983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

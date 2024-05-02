@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 36258501}
   - component: {fileID: 36258500}
   - component: {fileID: 36258499}
+  - component: {fileID: 36258504}
   m_Layer: 2
   m_Name: Boss1
   m_TagString: boss
@@ -498,6 +499,27 @@ Transform:
   - {fileID: 1861978316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &36258504
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36258498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7bf9cf0bb09241a6b108f114c743378, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &53090214
 PrefabInstance:
   m_ObjectHideFlags: 0
