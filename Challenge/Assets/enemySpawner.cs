@@ -8,6 +8,8 @@ public class enemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] dropsPrefabs;
     [SerializeField] private bool canSpawn = true;
     private GameObject[] getCount;
+    private GameObject[] getCount2;
+    private GameObject[] getCount3;
 
     [SerializeField] private Transform top;
     [SerializeField] private Transform left;
@@ -32,7 +34,10 @@ public class enemySpawner : MonoBehaviour
     {
         
         getCount = GameObject.FindGameObjectsWithTag("Enemy");
-        count = getCount.Length;
+        getCount2 = GameObject.FindGameObjectsWithTag("Enemy2");
+        getCount3 = GameObject.FindGameObjectsWithTag("Enemy3");
+
+        count = getCount.Length + getCount2.Length + getCount3.Length;
 
         if(count > maxDrops)
         {
