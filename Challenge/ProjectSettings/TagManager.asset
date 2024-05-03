@@ -21,6 +21,8 @@ TagManager:
   - rightclickdrop
   - Enemy2
   - Enemy3
+  - Square
+  - Light
   layers:
   - Default
   - TransparentFX

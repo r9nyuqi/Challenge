@@ -109,7 +109,8 @@ public class bossHealth : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.position - transform.position);
         if (ray.collider)
         {
-          
+
+           
             hasLineOfSight = ray.collider.CompareTag("Player");
         }
         if (hasLineOfSight)
