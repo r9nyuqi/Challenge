@@ -337,7 +337,7 @@ public class movement : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
-            TakeDamage(15);
+            TakeDamage(10);
         }
 
         if(other.gameObject.CompareTag("rightclickdrop"))

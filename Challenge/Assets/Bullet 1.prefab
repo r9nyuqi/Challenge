@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  force: 20
+  force: 18
 --- !u!114 &556992414092049009
 MonoBehaviour:
   m_ObjectHideFlags: 0
