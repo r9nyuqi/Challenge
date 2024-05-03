@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7acd29fc57dc44ceb336ee176bd3f02
+guid: aa09f8d9808bc4a41bdcca1506ddba41
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,91 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: wallspritehealth_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1857.5
-        height: 7195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 633c8afdaba1e4b548a54dac663f8ba2
-      internalID: 1317908374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallspritehealth_1
-      rect:
-        serializedVersion: 2
-        x: 1857
-        y: 0
-        width: 1857.5
-        height: 7195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b9e9f718e2a341f5ad8c8924a9bd3b6
-      internalID: -1050813256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallspritehealth_2
-      rect:
-        serializedVersion: 2
-        x: 3714
-        y: 0
-        width: 1857.5
-        height: 7195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3de3a2c271bf8409e9c931f043449162
-      internalID: -338930926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wallspritehealth_3
-      rect:
-        serializedVersion: 2
-        x: 5571
-        y: 0
-        width: 1857.5
-        height: 7195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed9402a0d98a74f808dceed142af35e8
-      internalID: 1737436983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -203,11 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      wallspritehealth_0: 1317908374
-      wallspritehealth_1: -1050813256
-      wallspritehealth_2: -338930926
-      wallspritehealth_3: 1737436983
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
