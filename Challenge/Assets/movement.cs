@@ -73,6 +73,9 @@ public class movement : MonoBehaviour
     Vector2 move;
     Animator animator;
 
+    public Scene scene;
+    
+
     void Start()
     {
         
@@ -80,6 +83,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if (isheal)
         {
@@ -112,6 +116,7 @@ public class movement : MonoBehaviour
         
         if (health <= 0)
         {
+            scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene("LossRoom");
             //sp.enabled = false;
             //StartCoroutine(Loss());
