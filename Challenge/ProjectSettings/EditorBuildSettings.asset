@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/mainMenu.unity
+    path: Assets/Scenes/mainMenuBackup.unity
     guid: 4b7c19d96cd264738acbca63b143d425
   - enabled: 1
     path: Assets/Scenes/instructionsScene.unity
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LossRoom3.unity
     guid: 4b72f3aa68fb3481f881feb6adda4780
+  - enabled: 1
+    path: Assets/Scenes/mainMenu.unity
+    guid: 5abeb27ba9e7845a7a4d0a377eba885a
   m_configObjects: {}

@@ -370,7 +370,11 @@ public class movement : MonoBehaviour
                 
             }
         }
-        
+        if (other.gameObject.CompareTag("NavEnemy"))
+        {
+            transform.position = new Vector2((float)-7.97, (float)-3.9);
+        }
+
     }
 
     public bool getHasRightClick()

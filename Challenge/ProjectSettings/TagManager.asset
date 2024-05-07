@@ -23,6 +23,7 @@ TagManager:
   - Enemy3
   - Square
   - Light
+  - NavEnemy
   layers:
   - Default
   - TransparentFX
