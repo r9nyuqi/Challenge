@@ -117,7 +117,21 @@ public class movement : MonoBehaviour
         if (health <= 0)
         {
             scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene("LossRoom");
+           
+            if (scene.name.Equals("GameRoom2"))
+            {
+                SceneManager.LoadScene("LossRoom");
+            }
+            else if(scene.name.Equals("GameRoom3"))
+            {
+                SceneManager.LoadScene("LossRoom2");
+            }
+            else if(scene.name.Equals("GameRoom4"))
+            {
+                SceneManager.LoadScene("LossRoom3");
+            }
+
+
             //sp.enabled = false;
             //StartCoroutine(Loss());
 

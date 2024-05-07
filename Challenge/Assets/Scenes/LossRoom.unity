@@ -5367,6 +5367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   scene: 0
+  player: {fileID: 0}
 --- !u!114 &681749406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5687,6 +5688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   scene: 0
+  player: {fileID: 0}
 --- !u!114 &1409316456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5889,7 +5891,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1409316455}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: restart
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
