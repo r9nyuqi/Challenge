@@ -46,6 +46,7 @@ public class MainMenu : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         movement = player.GetComponent<movement>();
+      
     }
 
 

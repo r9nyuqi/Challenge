@@ -53,6 +53,10 @@ public class NewPauseMenuScript : MonoBehaviour
 
     public void MainMenuButton()
     {
+        PauseMenuCanvas.SetActive(false);
+        Time.timeScale = 1f;
+        Paused = false;
         SceneManager.LoadScene("mainMenu");
+       
     }
 }
