@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/mainMenu.unity
+    guid: 5abeb27ba9e7845a7a4d0a377eba885a
+  - enabled: 1
     path: Assets/Scenes/mainMenuBackup.unity
     guid: 4b7c19d96cd264738acbca63b143d425
   - enabled: 1
@@ -16,7 +19,7 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/GameRoom2.unity
-    guid: bc619c8141ee4484bb6df07f65815f1f
+    guid: 20aa6b8bcbd4843b4a01fc77ab16d0c0
   - enabled: 1
     path: Assets/Scenes/LossRoom.unity
     guid: 0593666ff7be240bbab482e65fe3bd01
@@ -25,10 +28,10 @@ EditorBuildSettings:
     guid: 8d707e5a0945e4ceca6f467e71254353
   - enabled: 1
     path: Assets/Scenes/GameRoom3.unity
-    guid: 3f55bef91a8cb4bb6aa0112df6ca0856
+    guid: 11e65bfdb247744f3821a0d2461aec39
   - enabled: 1
     path: Assets/Scenes/GameRoom4.unity
-    guid: 915abc9a03474481fbc716278c2f6447
+    guid: f2ae209a9c3074448b7b37fb8fd4b1fa
   - enabled: 1
     path: Assets/Scenes/GameRoom5.unity
     guid: 252a7ed76148f4e7781f904d318829ba
@@ -41,7 +44,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LossRoom3.unity
     guid: 4b72f3aa68fb3481f881feb6adda4780
-  - enabled: 1
-    path: Assets/Scenes/mainMenu.unity
-    guid: 5abeb27ba9e7845a7a4d0a377eba885a
   m_configObjects: {}

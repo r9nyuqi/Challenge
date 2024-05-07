@@ -7500,11 +7500,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.2
+      value: -8.91
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.26
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8690,7 +8690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.19
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 1755160168088684559, guid: 49822ac324d98455cb5a535f823f4ae8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9926,7 +9926,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2e17f5a16c99d42b2acfb625fe3e8f82, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1a6638bd14dd347b3b279d046ccaa2d1, type: 2}
 --- !u!4 &1780178742
 Transform:
   m_ObjectHideFlags: 0
