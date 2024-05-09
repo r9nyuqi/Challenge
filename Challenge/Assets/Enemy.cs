@@ -161,7 +161,7 @@ public class Enemy : MonoBehaviour
         }
         if (hasLineOfSight)
         {
-            rb.velocity = transform.up * (speed+1);
+            rb.velocity = transform.up * (float)(speed+0.5);
             Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
         }
         else

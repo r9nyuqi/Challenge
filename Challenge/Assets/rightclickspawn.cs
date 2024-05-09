@@ -38,7 +38,7 @@ public class rightclickspawn : MonoBehaviour
 
         
 
-        if (count > maxDrops || movement.getHasRightClick())
+        if (count >= maxDrops || movement.getHasRightClick())
         {
             canSpawn = false;
         }

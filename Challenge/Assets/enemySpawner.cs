@@ -56,8 +56,21 @@ public class enemySpawner : MonoBehaviour
             timer = 0;
             if(canSpawn)
             {
-                int ran = Random.Range(0, dropsPrefabs.Length);
-                GameObject DropsToSpawn = dropsPrefabs[ran];
+                int ran = Random.Range(1, 7);
+                GameObject DropsToSpawn;
+                if (ran >= 1 && ran <= 3)
+                {
+                    DropsToSpawn = dropsPrefabs[0];
+                }
+                else if (ran >= 3 && ran <= 5)
+                {
+                    DropsToSpawn = dropsPrefabs[1];
+                }
+                else
+                {
+                    DropsToSpawn = dropsPrefabs[2];
+                }
+               
                 Instantiate(DropsToSpawn, transform.position, Quaternion.identity);
             }
         }

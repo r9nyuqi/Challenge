@@ -15,6 +15,8 @@ public class rightclickdrop : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         movement = player.GetComponent<movement>();
+        
+       
 
     }
 
@@ -25,12 +27,13 @@ public class rightclickdrop : MonoBehaviour
         {
             rb.excludeLayers = LayerMask.GetMask("Player");
             
+            
            
         }
         else
         {
             rb.excludeLayers = LayerMask.GetMask("Enemy");
-            rb.includeLayers = LayerMask.GetMask("Player");
+           
         }
     }
 }
