@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5726655676211477969}
   - component: {fileID: 2447285430034469513}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4790010474663221894}
   - component: {fileID: 9132611722816748644}
   - component: {fileID: 2608139033156919563}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: drop1
   m_TagString: drops
   m_Icon: {fileID: 0}
