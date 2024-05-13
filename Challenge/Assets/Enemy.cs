@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
@@ -33,13 +34,13 @@ public class Enemy : MonoBehaviour
     public bool isdie = false;
     public Animator animator;
     public AudioSource hit;
-    
-   
+    public Light2D light;
+
+
     // Start is called before the first frame update
     void Start()
     {
 
-        
         roomIndex = 2;
         float angleChange = Random.Range(-90f, 90f);
         Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
@@ -161,12 +162,15 @@ public class Enemy : MonoBehaviour
         }
         if (hasLineOfSight)
         {
+            //light.color = new Color(1,1,1,1);
+            //animator.SetBool("cansee", true);
             rb.velocity = transform.up * (float)(speed+0.5);
             Debug.DrawRay(transform.position, target.position - transform.position, Color.green);
         }
         else
         {
-         
+            //light.color = new Color(1, 1, 1, 0);
+            //animator.SetBool("cansee", false);
             rb.velocity = direction * speed;
             Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
         }
