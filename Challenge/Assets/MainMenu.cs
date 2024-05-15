@@ -8,17 +8,21 @@ public class MainMenu : MonoBehaviour
     public movement movement;
     public int scene;
     public GameObject player;
+    public Animator animation;
+    
     public void PlayGame()
     {
-        SceneManager.LoadScene("GameRoom2");
+        
+        start("GameRoom2");
     }
     public void PlayGame2()
     {
-        SceneManager.LoadScene("GameRoom3");
+        start("GameRoom3");
+        
     }
     public void PlayGame3()
     {
-        SceneManager.LoadScene("GameRoom4");
+        start("GameRoom4");
     }
     public void OpenInstructions()
     {
@@ -27,7 +31,7 @@ public class MainMenu : MonoBehaviour
 
     public void tutorial()
     {
-        SceneManager.LoadScene("GameRoom1");
+        start("GameRoom1");
     }
 
     public void restart()
@@ -47,6 +51,14 @@ public class MainMenu : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         movement = player.GetComponent<movement>();
       
+    }
+
+    private IEnumerator start(string room)
+    {
+        animation.SetTrigger("Switch");
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene(room);
+
     }
 
 
