@@ -9,20 +9,25 @@ public class MainMenu : MonoBehaviour
     public int scene;
     public GameObject player;
     public Animator animation;
-    
+    public float timer;
+    public bool started = false;
+    public string room;
+    public Canvas canvas;
     public void PlayGame()
     {
         
-        start("GameRoom2");
+        
     }
     public void PlayGame2()
     {
-        start("GameRoom3");
-        
+        room = "GameRoom3";
+        started = true;
+
     }
     public void PlayGame3()
     {
-        start("GameRoom4");
+        started = true;
+        room = "GameRoom4";
     }
     public void OpenInstructions()
     {
@@ -31,7 +36,8 @@ public class MainMenu : MonoBehaviour
 
     public void tutorial()
     {
-        start("GameRoom1");
+        room = "GameRoom1";
+        started = true;
     }
 
     public void restart()
@@ -43,7 +49,23 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         scene = movement.scene.buildIndex;
-        
+
+        if(started)
+        {
+
+            timer = 1;
+            animation.SetTrigger("Switch");
+            started = false;
+            canvas.sortingOrder = -100;
+        }
+        if(timer > 0 && timer < 5.2)
+        {
+            timer += Time.deltaTime;
+        }
+        else if (timer >= 5.2)
+        {
+            SceneManager.LoadScene(room);
+        }
     }
 
     private void Start()
@@ -53,13 +75,7 @@ public class MainMenu : MonoBehaviour
       
     }
 
-    private IEnumerator start(string room)
-    {
-        animation.SetTrigger("Switch");
-        yield return new WaitForSeconds(4);
-        SceneManager.LoadScene(room);
-
-    }
+    
 
 
 }

@@ -260,7 +260,7 @@ public class movement : MonoBehaviour
        
         //rb.MovePosition(rb.position + move * movespeed * Time.deltaTime);
         rb.velocity = new Vector2(horizontalInput * movespeed, verticalInput * movespeed);
-        animator.SetFloat("speed", Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
+        //animator.SetFloat("speed", Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
 
     }
 
