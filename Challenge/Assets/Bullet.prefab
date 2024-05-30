@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   timer: 0
+  fieldofView: {fileID: 4787337278843253154}
   hit: {fileID: 1939831326479089628}
 --- !u!50 &8221313602633149181
 Rigidbody2D:
@@ -374,7 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layermask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4608
 --- !u!33 &7134845599400902108
 MeshFilter:
   m_ObjectHideFlags: 0
