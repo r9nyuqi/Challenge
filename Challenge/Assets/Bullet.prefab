@@ -321,7 +321,7 @@ NavMeshAgent:
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 0.16
   m_BaseOffset: 0.08
@@ -345,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6468230174981807691
 Transform:
   m_ObjectHideFlags: 0
@@ -376,6 +376,7 @@ MonoBehaviour:
   layermask:
     serializedVersion: 2
     m_Bits: 4608
+  player: {fileID: 0}
 --- !u!33 &7134845599400902108
 MeshFilter:
   m_ObjectHideFlags: 0
