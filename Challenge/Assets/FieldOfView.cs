@@ -8,8 +8,9 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private LayerMask layermask;
 
     private Vector3 origin;
-    private float startingAngle;
+    private float angle;
     private float fov;
+    public Transform player;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class FieldOfView : MonoBehaviour
         origin = Vector3.zero;
         fov = 70f;
 
-
+        
 
     }
 
@@ -28,10 +29,10 @@ public class FieldOfView : MonoBehaviour
         
        
         int raycount = 50;
-        float angle = startingAngle;
+        
         float angleIncrease = fov / raycount;
         float viewDistance = 5f;
-
+        origin = Vector3.zero;
 
         Vector3[] verticies = new Vector3[raycount + 1 + 1];
         Vector2[] uv = new Vector2[verticies.Length];
@@ -50,15 +51,16 @@ public class FieldOfView : MonoBehaviour
 
             RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, layermask);
 
-
-            if(raycastHit2D.collider == null)
-            {
-                vertex = origin + GetVectorFromAngle(angle) * viewDistance;
-            }
-            else
-            {     
-                vertex = raycastHit2D.point;
-            }
+            vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+            
+            //if(raycastHit2D.collider == null)
+            //{
+            //    vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+            //}
+            //else
+            //{     
+            //    vertex = raycastHit2D.point;
+            //}
 
             verticies[vertexIndex] = vertex;
             if (i > 0)
@@ -93,12 +95,12 @@ public class FieldOfView : MonoBehaviour
 
     public void setDirection(Vector3 direction)
     {
-        this.startingAngle = GetAngleFromVectorFloat(direction) - fov / 2f;
+        this.angle = GetAngleFromVectorFloat(direction) - fov / 2f;
     }
 
     public void setDirectionFloat(float direction)
     {
-        startingAngle = direction;
+        angle = direction;
     }
 
 
