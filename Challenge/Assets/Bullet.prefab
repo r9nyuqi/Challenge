@@ -107,6 +107,7 @@ MonoBehaviour:
   timer: 0
   fieldofView: {fileID: 4787337278843253154}
   hit: {fileID: 1939831326479089628}
+  target: {fileID: 0}
 --- !u!50 &8221313602633149181
 Rigidbody2D:
   serializedVersion: 4
@@ -312,7 +313,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4054219413715819705}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
   m_Speed: 3.5

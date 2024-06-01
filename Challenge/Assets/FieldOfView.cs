@@ -33,7 +33,7 @@ public class FieldOfView : MonoBehaviour
         float angleIncrease = fov / raycount;
         float viewDistance = 5f;
         origin = Vector3.zero;
-
+        angle = 120f;
         Vector3[] verticies = new Vector3[raycount + 1 + 1];
         Vector2[] uv = new Vector2[verticies.Length];
 
@@ -51,16 +51,16 @@ public class FieldOfView : MonoBehaviour
 
             RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, layermask);
 
-            vertex = origin + GetVectorFromAngle(angle) * viewDistance;
             
-            //if(raycastHit2D.collider == null)
-            //{
-            //    vertex = origin + GetVectorFromAngle(angle) * viewDistance;
-            //}
-            //else
-            //{     
-            //    vertex = raycastHit2D.point;
-            //}
+
+            if (raycastHit2D.collider == null)
+            {
+                vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+            }
+            else
+            {
+                vertex = raycastHit2D.point;
+            }
 
             verticies[vertexIndex] = vertex;
             if (i > 0)
