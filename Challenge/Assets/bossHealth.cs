@@ -23,6 +23,8 @@ public class bossHealth : MonoBehaviour
     public Animator animator;
     public AudioSource wallbreak;
     public AudioSource hit;
+    public bool warning = false;
+    public float warningTimer = 0;
 
     public Sprite sp1, sp2, sp3;
     // Start is called before the first frame update
@@ -86,6 +88,17 @@ public class bossHealth : MonoBehaviour
         {
             light.color = new Color(1, (float)0.92, (float)0.016, 1);
         }
+
+        if(warning)
+        {
+            warningTimer += Time.deltaTime;
+        }
+
+        if(warningTimer >= 3)
+        {
+            warning = false;
+            warningTimer = 0;
+        }
     }
 
     public void TakeDamage(float damage)
@@ -102,6 +115,15 @@ public class bossHealth : MonoBehaviour
             Destroy(other.gameObject);
             hit.Play();
         }
+
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(other.gameObject);
+            warning = true;
+        }
+
+
+
     }
 
     private void FixedUpdate()
