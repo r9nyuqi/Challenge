@@ -61,6 +61,10 @@ public class Enemy3 : MonoBehaviour
             animator.SetTrigger("dietrigger");
             rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
             rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
+
+            //Jonathan - addition of death scaling animation
+
+            GetComponent<ScaleDown>().TriggerScaleDown();
         }
         if (dieTimer >= 1)
         {

@@ -61,6 +61,10 @@ public class Enemy2 : MonoBehaviour
             rb.excludeLayers = LayerMask.GetMask("Player");
             rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
             rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
+
+            //Jonathan - addition of death scaling animation
+
+            GetComponent<ScaleDown>().TriggerScaleDown();
         }
 
         if (dieTimer >= 1)
@@ -231,6 +235,8 @@ public class Enemy2 : MonoBehaviour
             Destroy(other.gameObject);
             isdie = true;
             hit.Play();
+
+            
         }
         else if (other.gameObject.CompareTag("Wall"))
         {

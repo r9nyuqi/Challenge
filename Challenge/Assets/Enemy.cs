@@ -63,6 +63,10 @@ public class Enemy : MonoBehaviour
             rb.excludeLayers = LayerMask.GetMask("Player");
             rb.excludeLayers += LayerMask.GetMask("Ignore Raycast");
             rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
+
+            //Jonathan - addition of death scaling animation
+
+            GetComponent<ScaleDown>().TriggerScaleDown();
         }
 
         if(dieTimer >= 1)
