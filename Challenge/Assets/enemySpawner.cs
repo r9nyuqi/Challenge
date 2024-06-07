@@ -84,10 +84,10 @@ public class enemySpawner : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(spawnRate);
         while (canSpawn)
         {
-            print("spawning");
+            //print("spawning");
             //getCount = GameObject.FindGameObjectsWithTag("Enemy");
             //int count = getCount.Length;
-            //if(count < 1)
+            if(count < 1)
             {
                 yield return wait;
                 int ran = Random.Range(0, dropsPrefabs.Length);

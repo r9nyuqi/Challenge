@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789398163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b314d2df1c83744bbb9062e28a5b4e97, type: 3}
   m_Name: 
@@ -11820,27 +11820,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2309216227845488994, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
       propertyPath: m_Looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2309216227845488994, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: ec9e5ceb43d5446ed92ece85528d0372, type: 3}
+      objectReference: {fileID: 32900000, guid: e80aa313d03774951b7629aaf2e67047, type: 3}
     - target: {fileID: 2309216227845488994, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
       propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2309216227845488994, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2309216227845488994, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: 46cbf6f793cb54d61879fa4b1c1ff35c, type: 2}
     - target: {fileID: 2309216227845488994, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
+      propertyPath: m_TimeUpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309216227845488994, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5324317530034715410, guid: 0e02d10ed641849bf8f215f0125ab264, type: 3}
       propertyPath: m_Pivot.x
