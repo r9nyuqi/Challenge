@@ -7,6 +7,7 @@ public class ScaleDown : MonoBehaviour
     private Vector3 originalScale;
     private float timeElapsed = 0;
 
+    private bool start = false;
     void Start()
     {
         originalScale = transform.localScale; // Store the original scale
@@ -14,7 +15,8 @@ public class ScaleDown : MonoBehaviour
 
     void Update()
     {
-        if (timeElapsed < duration)
+        
+        if (start && timeElapsed < duration)
         {
             timeElapsed += Time.deltaTime;
             float scale = Mathf.Lerp(1, 0, timeElapsed / duration);
@@ -29,6 +31,6 @@ public class ScaleDown : MonoBehaviour
 
     public void TriggerScaleDown()
     {
-        timeElapsed = 0; // Reset the timer
+        start = true;
     }
 }
