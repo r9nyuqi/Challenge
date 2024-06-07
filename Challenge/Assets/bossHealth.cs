@@ -23,6 +23,7 @@ public class bossHealth : MonoBehaviour
     public Animator animator;
     public AudioSource wallbreak;
     public AudioSource hit;
+    public AudioSource warningSound;
     public bool warning = false;
     public float warningTimer = 0;
 
@@ -118,6 +119,7 @@ public class bossHealth : MonoBehaviour
 
         if (other.gameObject.CompareTag("Bullet"))
         {
+            warningSound.Play();
             Destroy(other.gameObject);
             warning = true;
         }

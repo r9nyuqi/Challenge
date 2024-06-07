@@ -20,6 +20,7 @@ public class warning : MonoBehaviour
         if(bossHealth.warning)
         {
             warn.color = new Color(225, 225, 225, 50);
+
         }
         else
         {
